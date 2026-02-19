@@ -1,0 +1,163 @@
+<!-- FILE: locations.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Locations - Highway Stops Retail</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Font Awesome for icons (like on the Rontec site) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- ================== Header & Navigation Bar (Copied from your code) ================== -->
+    <header class="main-header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Highway Stops Retail Logo">
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contract.html">Contract Management</a></li>
+                    <li><a href="locations.html">Locations</a></li>
+                    <li><a href="offers.html">Offers</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- ================== Page Title Hero ================== -->
+        <section class="locations-hero-simple">
+            <div class="container">
+                <h1>Our Network of Service Stations</h1>
+                <p>Find your nearest Highway Stop using the search and filter options below.</p>
+            </div>
+        </section>
+
+        <!-- ================== Main Content: Search Panel & Map ================== -->
+        
+            <!-- TOP HORIZONTAL BAR -->
+<div class="top-filter-bar">
+                <div class="filter-box">
+                    <h4>Filter by Services</h4>
+                    <div class="filter-options">
+                        <label class="filter-checkbox">
+                           <input type="checkbox" name="service" value="Air"> <i class="fa-solid fa-wind"></i> Air
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" name="service" value="Jet Wash"> <i class="fa-solid fa-spray-can"></i> Jet Wash
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" name="service" value="Vaccum"> <i class="fa-solid fa-broom-ball"></i> Vaccum
+                        </label>
+                         <label class="filter-checkbox">
+                            <input type="checkbox" name="service" value="Car Wash"> <i class="fa-solid fa-car-side"></i> Car Wash
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" name="service" value="Coffee"> <i class="fa-solid fa-mug-hot"></i> Coffee
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" name="service" value="Deliveroo"> <i class="fa-solid fa-biking"></i> Deliveroo
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" name="service" value="Just Eat"> <i class="fa-solid fa-utensils"></i> Just Eat
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" name="service" value="Uber Eat"> <i class="fa-solid fa-motorcycle"></i> Uber Eat
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" name="service" value="Amazon Locker"> <i class="fa-solid fa-box-open"></i> Amazon Locker
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" name="service" value="Lottery"> <i class="fa-solid fa-ticket"></i> Lottery
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" name="service" value="Rollover"> <i class="fa-solid fa-hotdog"></i> Rollover
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" name="service" value="Subway"> <i class="fa-solid fa-utensils"></i> Subway
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" name="service" value="Fireaway Pizza"> <i class="fa-solid fa-pizza-slice"></i> Fireaway Pizza
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" name="service" value="Toilets"> <i class="fa-solid fa-restroom"></i> Toilets
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" name="service" value="ATM"> <i class="fa-solid fa-credit-card"></i> ATM
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" name="service" value="Stoneway Pizza"> <i class="fa-solid fa-pizza-slice"></i> Stoneway Pizza
+                        </label>
+                    </div>
+                </div>
+</div>
+              <div class="locations-body">
+
+    <!-- LEFT: STATIONS LIST -->
+    <div class="search-panel">
+        <!-- SEARCH BOX ABOVE LIST -->
+        <div class="search-box">
+            <input type="text" id="locationSearchInput" 
+                   placeholder="Search by city or postcode...">
+        </div>
+        <div class="location-list-container"></div>
+    </div>  
+
+            <!-- Right Side: Map -->
+            <div class="map-panel">
+                <div id="map"></div>
+            </div>
+            </div>
+    </main>
+
+    <!-- ================== Footer (Copied from your code) ================== -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About Us</h4>
+                    <p>Highway Stops Retail is a leading independent forecourt operator in the UK, focused on providing premium fuel and a quality retail experience.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="locations.html">Our Locations</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                     <ul>
+                        <li><p>Unit 11, Metro Trading Centre, Second Way, Wembley, Middlesex, HA9 0YJ</p></li>
+                        <li><p>Tel: 020 8900 1009</p></li>
+                        <li><p>Email: enquiries@highwaystops.co.uk</p></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                © 2024 Highway Stops Retail Ltd | All Rights Reserved
+            </div>
+        </div>
+    </footer>
+
+    <!-- Your existing script for mobile menu, etc. -->
+    <script src="js/script.js"></script>
+    
+    <!-- ================== ACTION REQUIRED: Add API Key Below ================== -->
+    <!-- Replace 'YOUR_API_KEY' with your actual Google Maps API key -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpU-G71D-UM-eOHWz-FQzyFZHWHGxun9M&callback=initMap"></script>
+    
+    <!-- Script for the location finder logic -->
+    <script src="locations.js"></script>
+
+</body>
+</html>

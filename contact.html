@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Highway Stops Retail Ltd</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Highway Stops Retail Logo">
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contract.html">Contract Management</a></li>
+                    <li><a href="locations.html">Locations</a></li>
+                    <li><a href="offers.html">Offers</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="content-section">
+            <div class="container">
+                <h2>Get In Touch</h2>
+                <div class="contact-wrapper">
+                    <div class="contact-info">
+                        <h3>Highway Stops Retail Ltd</h3>
+                        <p>
+                            <strong>Address:</strong><br>
+                            Unit 11, Metro Trading Centre, Second Way,<br>
+                            Wembley, Middlesex, HA9 0YJ
+                        </p>
+                        <p>
+                            <strong>Tel:</strong> 020 8900 1009
+                        </p>
+                        <p>
+                            <strong>Email:</strong> enquiries@highwaystops.co.uk
+                        </p>
+                        <div class="map-container">
+                            <div id="contact-map"></div>
+                        </div>
+                    </div>
+                    <div class="contact-form">
+                        <h3>Send us a message</h3>
+                        <form action="#" method="POST">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Your Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="6" required></textarea>
+                            </div>
+                            <button type="submit" class="btn-submit">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+function initContactMap() {
+    const location = { lat: 51.5414379, lng: -0.2872920 };
+
+    const map = new google.maps.Map(document.getElementById("contact-map"), {
+        zoom: 16,
+        center: location,
+        styles: [
+            {
+                featureType: "poi",
+                stylers: [{ visibility: "off" }]
+            }
+        ]
+    });
+
+    const marker = new google.maps.Marker({
+        position: location,
+        map: map,
+        title: "Highway Stops Retail Ltd"
+    });
+
+    const infoWindow = new google.maps.InfoWindow({
+        content: `
+            <strong>Highway Stops Retail Ltd</strong><br>
+            Unit 11, Metro Trading Centre,<br>
+            Second Way, Wembley,<br>
+            Middlesex, HA9 0YJ
+        `
+    });
+
+    marker.addListener("click", () => {
+        infoWindow.open(map, marker);
+    });
+}
+</script>
+
+<script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpU-G71D-UM-eOHWz-FQzyFZHWHGxun9M&callback=initContactMap">
+</script>
+
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About Us</h4>
+                    <p>Highway Stops Retail is a leading independent forecourt operator in the UK, focused on providing premium fuel and a quality retail experience.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="locations.html">Our Locations</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                     <ul>
+                        <li><p>Unit 11, Metro Trading Centre, Second Way, Wembley, Middlesex, HA9 0YJ</p></li>
+                        <li><p>Tel: 020 8900 1009</p></li>
+                        <li><p>Email: enquiries@highwaystops.co.uk</p></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                © 2024 Highway Stops Retail Ltd | All Rights Reserved
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
