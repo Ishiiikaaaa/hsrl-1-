@@ -47,6 +47,17 @@ if (partnerSlider) {
             offersTrack.appendChild(clone);
         });
     }
+
+
+    // --- mobile ---
+const hamburger = document.getElementById("hamburger");
+const nav = document.querySelector(".main-nav");
+
+hamburger.addEventListener("click", () => {
+    nav.classList.toggle("active");
+});
+
+
     
     // --- Active Nav Link ---
     const currentLocation = location.href;
