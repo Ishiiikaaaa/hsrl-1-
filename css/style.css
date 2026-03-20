@@ -1260,3 +1260,51 @@ img {
     margin-bottom: 15px;
     font-size: 1.2rem;
 }
+
+
+/* ===== HAMBURGER MENU ===== */
+
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 35px;
+    z-index: 200;
+}
+
+/* MOBILE NAVIGATION */
+
+@media (max-width:768px){
+
+    .hamburger{
+        display:block;
+    }
+
+    .main-nav{
+        position: absolute;
+        top:100px;
+        left:0;
+        width:100%;
+        background:white;
+        box-shadow:0 10px 20px rgba(0,0,0,0.1);
+        display:none;
+    }
+
+    .main-nav ul{
+        flex-direction:column;
+        gap:20px;
+        padding:30px;
+        position:static;
+        transform:none;
+        align-items:flex-start;
+    }
+
+    .main-nav.active{
+        display:block;
+    }
+
+}
