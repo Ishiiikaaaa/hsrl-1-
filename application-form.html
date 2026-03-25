@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Application Form</title>
+
+<style>
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f4f7f9;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.checkbox-group input {
+    width: auto;
+    height: auto;
+    margin: 0;
+}
+
+/* Container */
+.form-container {
+    max-width: 1700px;
+    width: 100%;
+    height: 100%;
+    margin: 40px auto;
+    background: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Progress Bar */
+.progress-bar {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.progress-step {
+    flex: 1;
+    height: 5px;
+    background: #ddd;
+    margin-right: 5px;
+    border-radius: 5px;
+}
+
+.progress-step.active {
+    background: #009e4d;
+}
+
+/* Steps */
+.form-step {
+    display: none;
+    animation: fade 0.4s ease;
+}
+
+.form-step.active {
+    display: block;
+}
+
+@keyframes fade {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Inputs */
+input, textarea, select {
+    width: 100%;
+    height: 100%;
+    padding: 14px;
+    margin: 12px 0;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+}
+
+/* Buttons */
+.step-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    background: #009e4d;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+button:hover {
+    background: #007a3d;
+}
+
+h2 {
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="form-container">
+
+<div class="progress-bar">
+    <div class="progress-step active"></div>
+    <div class="progress-step"></div>
+    <div class="progress-step"></div>
+    <div class="progress-step"></div>
+    <div class="progress-step"></div>
+    <div class="progress-step"></div>
+    <div class="progress-step"></div>
+</div>
+
+<form action="https://formspree.io/f/xjgpbljg" method="POST">
+
+<!-- STEP 1 -->
+<div class="form-step active">
+<h2>Personal Details</h2>
+
+<!-- Title -->
+<select name="title" required>
+    <option value="">Title</option>
+    <option>Mr</option>
+    <option>Mrs</option>
+    <option>Miss</option>
+    <option>Ms</option>
+</select>
+
+<input type="text" name="surname" placeholder="Surname" required>
+<input type="text" name="forename" placeholder="Forename(s)" required>
+
+<textarea name="address" placeholder="Home Address" required></textarea>
+
+<input type="tel" name="phone" placeholder="Contact Telephone No" required>
+
+<textarea name="former_address" placeholder="If lived less than 3 years, provide former address"></textarea>
+
+<input type="text" name="nationality" placeholder="Nationality">
+
+<input type="text" name="ni_number" placeholder="National Insurance No">
+
+<!-- Yes/No Questions -->
+<label>Have you ever been convicted of any criminal offence or have a case pending?</label>
+<select name="criminal_record">
+    <option>No</option>
+    <option>Yes</option>
+</select>
+
+<label>Previously employed by HSRL or operated a service station?</label>
+<select name="hsrl_employed">
+    <option>No</option>
+    <option>Yes</option>
+</select>
+
+<label>Ever been refused a position by HSRL?</label>
+<select name="hsrl_refused">
+    <option>No</option>
+    <option>Yes</option>
+</select>
+
+<label>Business or family relationship with any HSRL contract manager?</label>
+<select name="hsrl_relation">
+    <option>No</option>
+    <option>Yes</option>
+</select>
+
+<label>Do you own a car?</label>
+<select name="car">
+    <option>No</option>
+    <option>Yes</option>
+</select>
+
+<label>Do you hold a clean driving licence?</label>
+<select name="driving_license">
+    <option>Yes</option>
+    <option>No</option>
+</select>
+
+<label>Do you use a computer?</label>
+<select name="computer">
+    <option>Yes</option>
+    <option>No</option>
+</select>
+
+<input type="text" name="relationship_other" placeholder="Relationship to other applicant(s)">
+
+<div class="step-buttons">
+<button type="button" onclick="nextStep()">Next</button>
+</div>
+</div>
+
+<!-- STEP 2 -->
+<div class="form-step">
+<h2>Financial Details</h2>
+
+<p><strong>The information which you provide in this section and in Section 3 (where applicable) will be verified through a 
+leading UK credit reference agency. This is an essential requirement but will be undertaken only if you pass the initial 
+interview stage of your application</strong><br>
+</p>
+
+<p><strong>With regard to the address given in Section 1:</strong></p>
+
+<label>Owner/Occupier?</label>
+<select name="owner">
+    <option>No</option>
+    <option>Yes</option>
+</select>
+
+<label>Private Tenant?</label>
+<select name="private_tenant">
+    <option>No</option>
+    <option>Yes</option>
+</select>
+
+<select name="furnishing">
+    <option value="">Furnished / Unfurnished</option>
+    <option>Furnished</option>
+    <option>Unfurnished</option>
+</select>
+
+<label>Local Authority Tenant?</label>
+<select name="local_tenant">
+    <option>No</option>
+    <option>Yes</option>
+</select>
+
+<input type="text" name="other_details" placeholder="Other (please specify)">
+
+<hr>
+
+<p><strong>If you own your house:</strong></p>
+
+<input type="text" name="property_value" placeholder="Approximate value">
+
+<label>Do you have a mortgage?</label>
+<select name="mortgage">
+    <option>No</option>
+    <option>Yes</option>
+</select>
+
+<input type="text" name="mortgage_outstanding" placeholder="Outstanding amount">
+<input type="text" name="monthly_repayment" placeholder="Monthly repayments">
+
+<input type="date" name="purchase_date">
+
+<input type="text" name="property_names" placeholder="Property in name(s) of">
+
+<textarea name="occupants" placeholder="Names of all occupants over 18"></textarea>
+
+<hr>
+
+<p><strong>If rented:</strong></p>
+
+<input type="text" name="rent" placeholder="Monthly rent">
+
+<hr>
+
+<input type="text" name="outgoings" placeholder="Total monthly financial outgoings">
+
+<label>Have you ever been refused credit?</label>
+<select name="credit_refused">
+    <option>No</option>
+    <option>Yes</option>
+</select>
+
+<label>Any County Court Judgement?</label>
+<select name="ccj">
+    <option>No</option>
+    <option>Yes</option>
+</select>
+
+<label>Ever been declared bankrupt?</label>
+<select name="bankrupt">
+    <option>No</option>
+    <option>Yes</option>
+</select>
+
+<label>Entered arrangement with creditors?</label>
+<select name="creditors">
+    <option>No</option>
+    <option>Yes</option>
+</select>
+
+<label>Objection to HSRL credit check?</label>
+<select name="credit_check">
+    <option>No</option>
+    <option>Yes</option>
+</select>
+
+<hr>
+
+<p><strong>Working Capital Available:</strong></p>
+
+<input type="text" name="bank_account" placeholder="Bank Account Amount">
+<input type="text" name="building_society" placeholder="Building Society Amount">
+<input type="text" name="other_source" placeholder="Other Source (please specify)">
+
+<div class="step-buttons">
+<button type="button" onclick="prevStep()">Back</button>
+<button type="button" onclick="nextStep()">Next</button>
+</div>
+</div>
+
+
+<!-- STEP 3 -->
+<div class="form-step">
+<h2>Your References</h2>
+
+<p><strong>Please provide details of three credit references:</strong><br>
+One bank reference and either two trade references OR (if not self-employed) two credit/store card references.  
+False information may lead to termination without notice.</p>
+
+<!-- Bank Reference -->
+<input type="text" name="bank_name" placeholder="Name of Bank">
+<textarea name="bank_address" placeholder="Bank Address"></textarea>
+
+<input type="text" name="account_no" placeholder="Account No">
+<input type="text" name="sort_code" placeholder="Sort Code">
+
+<input type="text" name="account_name" placeholder="Name of Account">
+
+<!-- Trade References -->
+<input type="text" name="trade_ref1" placeholder="1st Trade Referee Name">
+<textarea name="trade_ref1_address" placeholder="1st Trade Referee Address"></textarea>
+
+<input type="text" name="trade_ref2" placeholder="2nd Trade Referee Name">
+<textarea name="trade_ref2_address" placeholder="2nd Trade Referee Address"></textarea>
+
+<hr>
+
+<p><strong>Please supply two character references:</strong></p>
+
+<input type="text" name="char_name1" placeholder="Name">
+<textarea name="char_address1" placeholder="Address"></textarea>
+
+<input type="text" name="char_name2" placeholder="Name">
+<textarea name="char_address2" placeholder="Address"></textarea>
+
+<hr>
+
+<p><strong>Present (or Last) Employer Details:</strong></p>
+
+<input type="text" name="employer_name" placeholder="Name of Employer">
+<input type="text" name="business_nature" placeholder="Nature of Business">
+
+<textarea name="employer_address" placeholder="Address"></textarea>
+
+<input type="text" name="position" placeholder="Position Held">
+<input type="text" name="salary" placeholder="Salary">
+
+<label>Employment Duration:</label>
+<input type="date" name="start_date">
+<input type="date" name="end_date">
+
+<textarea name="reason_leaving" placeholder="Reason for Leaving"></textarea>
+
+<hr>
+
+<p><strong>If employment less than 2 years, provide previous employer:</strong></p>
+
+<input type="text" name="prev_employer_name" placeholder="Name of Employer">
+<input type="text" name="prev_business_nature" placeholder="Nature of Business">
+
+<textarea name="prev_employer_address" placeholder="Address"></textarea>
+
+<input type="text" name="prev_position" placeholder="Position Held">
+<input type="text" name="prev_salary" placeholder="Salary">
+
+<label>Employment Duration:</label>
+<input type="date" name="prev_start_date">
+<input type="date" name="prev_end_date">
+
+<textarea name="prev_reason_leaving" placeholder="Reason for Leaving"></textarea>
+
+<div class="step-buttons">
+<button type="button" onclick="prevStep()">Back</button>
+<button type="button" onclick="nextStep()">Next</button>
+</div>
+</div>
+
+<!-- STEP 4 -->
+<!-- STEP 4 -->
+<div class="form-step">
+<h2>Self Employment Details</h2>
+
+<input type="text" name="business_name" placeholder="Business/Company Name & Registration No">
+
+<input type="text" name="business_nature_self" placeholder="Nature of Business">
+
+<textarea name="business_address" placeholder="Business Address"></textarea>
+
+<input type="text" name="business_duration" placeholder="How long has the business been established?">
+
+<input type="number" name="employees" placeholder="Number of Employees">
+
+<textarea name="ceased_reason" placeholder="If ceased trading, state reason"></textarea>
+
+<label>Do you intend to continue your current business?</label>
+<select name="continue_business">
+    <option>No</option>
+    <option>Yes</option>
+</select>
+
+<input type="text" name="who_runs_current" placeholder="If Yes, who will run your current business?">
+
+<input type="text" name="who_runs_new" placeholder="Who will run this new opportunity?">
+
+<hr>
+
+<p><strong>If self-employed for less than 2 years:</strong></p>
+
+<p>(a) Provide previous employment details in Section 3</p>
+<p>(b) Provide previous business details in Section 6</p>
+
+<div class="step-buttons">
+<button type="button" onclick="prevStep()">Back</button>
+<button type="button" onclick="nextStep()">Next</button>
+</div>
+</div>
+
+<!-- STEP 5 -->
+<div class="form-step">
+<h2>Station Preferences</h2>
+
+<p><strong>
+When would you (and your partner(s)) be available to commence training prior to being appointed to manage a service station?
+</strong></p>
+
+<textarea name="training_availability" placeholder="Enter your availability for training"></textarea>
+
+<hr>
+
+<p><strong>
+To ensure that the right person within HSRL reviews your application, please state which country you would like to operate a service station.
+</strong></p>
+
+<input type="text" name="preferred_country" placeholder="Preferred Country">
+
+<div class="step-buttons">
+<button type="button" onclick="prevStep()">Back</button>
+<button type="button" onclick="nextStep()">Next</button>
+</div>
+</div>
+
+<!-- STEP 6 -->
+<div class="form-step">
+<h2>Additional information</h2>
+
+
+<div class="step-buttons">
+<button type="button" onclick="prevStep()">Back</button>
+<button type="button" onclick="nextStep()">Next</button>
+</div>
+</div>
+
+<!-- STEP 7 -->
+<!-- STEP 7 -->
+<div class="form-step">
+<h2>Data Protection Act & Declaration</h2>
+
+<p><strong>Data Protection Act</strong></p>
+
+<p>
+All personal information provided to HSRL in this Application Form will be held and used solely for the purpose of processing your application for service station contract management.  
+If your application is unsuccessful, your data will be destroyed within six months.  
+By completing this form, you consent to HSRL using your personal information in accordance with this statement.
+</p>
+
+<hr>
+
+<p><strong>Declaration</strong></p>
+
+<p>
+I/We hereby declare that all information provided is complete and accurate.  
+I/We understand that any offer from HSRL is subject to:
+</p>
+
+<ul style="margin-left: 20px;">
+<li>Satisfactory references</li>
+<li>Credit clearance</li>
+<li>Approval of HSRL Directors</li>
+<li>Termination if any information is found untrue</li>
+<li>Completion of all required agreements</li>
+</ul>
+
+<hr>
+
+<!-- Signature Section -->
+<input type="text" name="signature" placeholder="Signature (Type your full name)" required>
+
+<label>Date:</label>
+<input type="date" name="date" required>
+
+<!-- Consent Checkbox -->
+<label style="display:flex; align-items:center; gap:10px;">
+<div class="checkbox-group">
+    <input type="checkbox" required>
+    <span>I agree to the Data Protection Policy and declare that all information provided is correct</span>
+</div>
+</label>
+
+<div class="step-buttons">
+<button type="button" onclick="prevStep()">Back</button>
+<button type="submit">Submit 🚀</button>
+</div>
+</div>
+
+</form>
+
+</div>
+
+<script>
+let currentStep = 0;
+const steps = document.querySelectorAll(".form-step");
+const progress = document.querySelectorAll(".progress-step");
+
+function showStep(index) {
+    steps.forEach((step, i) => {
+        step.classList.toggle("active", i === index);
+        progress[i].classList.toggle("active", i <= index);
+    });
+}
+
+function nextStep() {
+    if (currentStep < steps.length - 1) {
+        currentStep++;
+        showStep(currentStep);
+    }
+}
+
+function prevStep() {
+    if (currentStep > 0) {
+        currentStep--;
+        showStep(currentStep);
+    }
+}
+</script>
+
+</body>
+</html>
