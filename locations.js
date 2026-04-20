@@ -18,7 +18,7 @@ const filterCheckboxes = document.querySelectorAll('.filter-checkbox input');
 const locationsData = [
     {
         name: "Anson Service Station",
-        address: "Brockhurst Road,Gosport,Hampshire, PO12 3AZ",
+        address: "Brockhurst Road,Gosport, Hampshire, PO12 3AZ",
         lat: 50.8075,
         lng: -1.1499,
         services: ["Air", "Jet Wash", "Coffee", "Rollover"]
@@ -81,7 +81,7 @@ const locationsData = [
     },
     {
         name: "Patcham Service Station",
-        address: "Patcham By-Pass, Brighton, East Sussex",
+        address: "Patcham By-Pass, Brighton, East Sussex, BN1 8YB",
         lat: 50.871,
         lng: -0.137,
         services: ["Air", "Jet Wash", "Vaccum", "Coffee", "Rollover", "Toilets"]
@@ -95,14 +95,14 @@ const locationsData = [
     },
     {
         name: "Gravesend Service Station",
-        address: "100 Old West Road, Gravesend Kent. DA11 0LR",
+        address: "100 Old West Road, Gravesend Kent, DA11 0LR",
         lat: 51.455,
         lng: 0.359,
         services: ["Air", "Jet Wash", "Coffee", "Rollover", "Fireaway Pizza", "Toilets", "Stoneway Pizza"]
     },
     {
         name: "Amersham Service Station",
-        address: "40 – 42 WOODSIDE ROAD AMERSHAM BUCKINGHAMSHIRE. HP6 6AJ",
+        address: "40 – 42 Woodside Road, Amersham, Buckinghamshire, HP6 6AJ",
         lat: 51.670,
         lng: -0.608,
         services: ["Air", "Coffee", "Rollover", "Toilets"]
