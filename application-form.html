@@ -8,10 +8,10 @@
 <style>
 body {
     font-family: 'Segoe UI', Tahoma, sans-serif;
-    background: linear-gradient(135deg, #eef2f3, #ffffff);
+    background: linear-gradient(135deg, #e0f2ff, #f7f9fc);
     margin: 0;
     padding: 20px;
-    color: #222;
+    color: #1f2937;
 }
 
 /* MAIN CONTAINER */
@@ -19,9 +19,10 @@ body {
     max-width: 1200px;
     margin: auto;
     padding: 40px;
-    background: #fff;
+    background: #ffffff;
     border-radius: 14px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    box-shadow: 0 12px 35px rgba(30, 64, 175, 0.12);
+    border: 1px solid #dbeafe;
 }
 
 /* HEADINGS */
@@ -29,30 +30,30 @@ h1 {
     text-align: center;
     font-size: 28px;
     margin-bottom: 25px;
-    color: #111;
+    color: #1d4ed8;
 }
 
 h2 {
     font-size: 20px;
     margin-bottom: 20px;
     padding-bottom: 8px;
-    border-bottom: 2px solid #eee;
-    color: #333;
+    border-bottom: 2px solid #bfdbfe;
+    color: #1e3a8a;
 }
 
 h3 {
     font-size: 16px;
     margin-bottom: 10px;
-    color: #444;
+    color: #374151;
 }
 
-/* SECTION CARD STYLE */
+/* SECTION */
 .form-section {
     margin-bottom: 50px;
     padding: 25px;
     border-radius: 12px;
-    background: #fafafa;
-    border: 1px solid #eee;
+    background: #f0f7ff;
+    border: 1px solid #dbeafe;
 }
 
 /* GRID */
@@ -71,11 +72,11 @@ h3 {
     margin-bottom: 14px;
 }
 
-/* INPUT STYLE */
+/* INPUT */
 input, textarea, select {
     width: 100%;
     padding: 10px 12px;
-    border: 1px solid #ccc;
+    border: 1px solid #cbd5e1;
     border-radius: 8px;
     font-size: 14px;
     transition: 0.2s;
@@ -83,9 +84,9 @@ input, textarea, select {
 }
 
 input:focus, textarea:focus {
-    border-color: #000;
+    border-color: #3b82f6;
     outline: none;
-    box-shadow: 0 0 0 2px rgba(0,0,0,0.05);
+    box-shadow: 0 0 0 3px rgba(59,130,246,0.15);
 }
 
 textarea {
@@ -98,28 +99,29 @@ button {
     display: block;
     margin: 30px auto 10px;
     padding: 14px 40px;
-    background: #111;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
     color: #fff;
     border: none;
     border-radius: 10px;
     font-size: 15px;
     cursor: pointer;
     transition: 0.3s;
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
 }
 
 button:hover {
-    background: #333;
     transform: translateY(-2px);
+    box-shadow: 0 12px 25px rgba(37, 99, 235, 0.35);
 }
 
-/* CHECKBOX / RADIO */
+/* CHECKBOX */
 input[type="checkbox"],
 input[type="radio"] {
     width: auto;
     transform: scale(1.1);
 }
 
-/* TEXT BLOCK */
+/* TEXT */
 p {
     line-height: 1.6;
     font-size: 14px;
@@ -128,6 +130,11 @@ p {
 /* HIDDEN */
 .hidden {
     display: none !important;
+}
+
+/* LABEL */
+label {
+    color: #374151;
 }
 
 /* RESPONSIVE */
