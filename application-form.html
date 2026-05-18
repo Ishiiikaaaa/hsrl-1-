@@ -214,7 +214,7 @@ H.S.R.L is an equal opportunities company and welcomes applications from all sec
  Applying with second applicant?
 </label>
 
-<form>
+<form id="applicationForm">
 
 <!-- SECTION 1 -->
 <!-- SECTION 1 -->
@@ -229,64 +229,82 @@ H.S.R.L is an equal opportunities company and welcomes applications from all sec
 
 <div class="form-row">
 <label>Title: Mr/Mrs/Miss/Ms</label>
-<input type="text">
+<input type="text" name="firstApplicantTitle">
 </div>
 
-<div class="form-row"><label>Surname:</label><input type="text"></div>
+<div class="form-row">
+<label>Surname:</label>
+<input type="text" name="firstApplicantSurname">
+</div>
 
-<div class="form-row"><label>Forename(s):</label><input type="text"></div>
+<div class="form-row">
+<label>Forename(s):</label>
+<input type="text" name="firstApplicantForename">
+</div>
 
-<div class="form-row"><label>Home Address:</label><textarea></textarea></div>
+<div class="form-row">
+<label>Home Address:</label>
+<textarea name="firstApplicantAddress"></textarea>
+</div>
 
-<div class="form-row"><label>Contact Telephone No:</label><input type="text"></div>
+<div class="form-row">
+<label>Contact Telephone No:</label>
+<input type="text" name="firstApplicantPhone">
+</div>
 
 <div class="form-row">
 <label>If you have lived at your current residence for less than 3 years, please provide your former address:</label>
-<textarea></textarea>
-</div>
-
-<div class="form-row"><label>Nationality:</label><input type="text"></div>
-
-<div class="form-row"><label>National Insurance No:</label><input type="text"></div>
-
-<div class="form-row">
-<label>Have you ever been convicted of any criminal offence or have you a case pending? Yes/No (if Yes, please give details in section 6)</label>
-<input type="text">
+<textarea name="firstApplicantFormerAddress"></textarea>
 </div>
 
 <div class="form-row">
-<label>Have you ever been previously employed by HSRL or operated a service station on behalf of HSRL? Yes/No (if Yes, please give details in Section 6)</label>
-<input type="text">
+<label>Nationality:</label>
+<input type="text" name="firstApplicantNationality">
 </div>
 
 <div class="form-row">
-<label>Have you ever been refused a position by HSRL? Yes/No (if Yes, please give details in Section 6)</label>
-<input type="text">
+<label>National Insurance No:</label>
+<input type="text" name="firstApplicantInsuranceNo">
 </div>
 
 <div class="form-row">
-<label>Do you have a business or family relationship with any existing HSRL contract manager? Yes/No (if Yes, please give details in Section 6)</label>
-<input type="text">
+<label>Have you ever been convicted of any criminal offence or have you a case pending?</label>
+<input type="text" name="firstApplicantCriminalRecord">
 </div>
 
 <div class="form-row">
-<label>Do you own a car? Yes/No</label>
-<input type="text">
+<label>Previously employed by HSRL?</label>
+<input type="text" name="firstApplicantHSRLEmployment">
 </div>
 
 <div class="form-row">
-<label>Do you hold a clean driving licence/ Yes/No (if No, please give details of endorsements in Section 6)</label>
-<input type="text">
+<label>Ever refused a position by HSRL?</label>
+<input type="text" name="firstApplicantRefusedPosition">
 </div>
 
 <div class="form-row">
-<label>Do you use a computer? Yes/No (please list applications you are familiar with in Section 6)</label>
-<input type="text">
+<label>Relationship with any existing HSRL contract manager?</label>
+<input type="text" name="firstApplicantRelationshipHSRL">
+</div>
+
+<div class="form-row">
+<label>Do you own a car?</label>
+<input type="text" name="firstApplicantCarOwner">
+</div>
+
+<div class="form-row">
+<label>Do you hold a clean driving licence?</label>
+<input type="text" name="firstApplicantDrivingLicence">
+</div>
+
+<div class="form-row">
+<label>Do you use a computer?</label>
+<input type="text" name="firstApplicantComputerSkills">
 </div>
 
 <div class="form-row">
 <label>What is your relationship to the other applicant(s)?</label>
-<input type="text">
+<input type="text" name="firstApplicantRelationship">
 </div>
 
 </div>
@@ -297,64 +315,82 @@ H.S.R.L is an equal opportunities company and welcomes applications from all sec
 
 <div class="form-row">
 <label>Title: Mr/Mrs/Miss/Ms</label>
-<input type="text">
+<input type="text" name="secondApplicantTitle">
 </div>
 
-<div class="form-row"><label>Surname:</label><input type="text"></div>
+<div class="form-row">
+<label>Surname:</label>
+<input type="text" name="secondApplicantSurname">
+</div>
 
-<div class="form-row"><label>Forename(s):</label><input type="text"></div>
+<div class="form-row">
+<label>Forename(s):</label>
+<input type="text" name="secondApplicantForename">
+</div>
 
-<div class="form-row"><label>Home Address:</label><textarea></textarea></div>
+<div class="form-row">
+<label>Home Address:</label>
+<textarea name="secondApplicantAddress"></textarea>
+</div>
 
-<div class="form-row"><label>Contact Telephone No:</label><input type="text"></div>
+<div class="form-row">
+<label>Contact Telephone No:</label>
+<input type="text" name="secondApplicantPhone">
+</div>
 
 <div class="form-row">
 <label>If you have lived at your current residence for less than 3 years, please provide your former address:</label>
-<textarea></textarea>
-</div>
-
-<div class="form-row"><label>Nationality:</label><input type="text"></div>
-
-<div class="form-row"><label>National Insurance No:</label><input type="text"></div>
-
-<div class="form-row">
-<label>Have you ever been convicted of any criminal offence or have you a case pending? Yes/No (if Yes, please give details in section 6)</label>
-<input type="text">
+<textarea name="secondApplicantFormerAddress"></textarea>
 </div>
 
 <div class="form-row">
-<label>Have you ever been previously employed by HSRL or operated a service station on behalf of HSRL? Yes/No (if Yes, please give details in Section 6)</label>
-<input type="text">
+<label>Nationality:</label>
+<input type="text" name="secondApplicantNationality">
 </div>
 
 <div class="form-row">
-<label>Have you ever been refused a position by HSRL? Yes/No (if Yes, please give details in Section 6)</label>
-<input type="text">
+<label>National Insurance No:</label>
+<input type="text" name="secondApplicantInsuranceNo">
 </div>
 
 <div class="form-row">
-<label>Do you have a business or family relationship with any existing HSRL contract manager? Yes/No (if Yes, please give details in Section 6)</label>
-<input type="text">
+<label>Have you ever been convicted of any criminal offence or have you a case pending?</label>
+<input type="text" name="secondApplicantCriminalRecord">
 </div>
 
 <div class="form-row">
-<label>Do you own a car? Yes/No</label>
-<input type="text">
+<label>Previously employed by HSRL?</label>
+<input type="text" name="secondApplicantHSRLEmployment">
 </div>
 
 <div class="form-row">
-<label>Do you hold a clean driving licence/ Yes/No (if No, please give details of endorsements in Section 6)</label>
-<input type="text">
+<label>Ever refused a position by HSRL?</label>
+<input type="text" name="secondApplicantRefusedPosition">
 </div>
 
 <div class="form-row">
-<label>Do you use a computer? Yes/No (please list applications you are familiar with in Section 6)</label>
-<input type="text">
+<label>Relationship with any existing HSRL contract manager?</label>
+<input type="text" name="secondApplicantRelationshipHSRL">
+</div>
+
+<div class="form-row">
+<label>Do you own a car?</label>
+<input type="text" name="secondApplicantCarOwner">
+</div>
+
+<div class="form-row">
+<label>Do you hold a clean driving licence?</label>
+<input type="text" name="secondApplicantDrivingLicence">
+</div>
+
+<div class="form-row">
+<label>Do you use a computer?</label>
+<input type="text" name="secondApplicantComputerSkills">
 </div>
 
 <div class="form-row">
 <label>What is your relationship to the other applicant(s)?</label>
-<input type="text">
+<input type="text" name="secondApplicantRelationship">
 </div>
 
 </div>
@@ -368,7 +404,6 @@ H.S.R.L is an equal opportunities company and welcomes applications from all sec
 <h2>Section 2 - Financial Details</h2>
 
 <p style="font-size:14px; margin-bottom:20px; line-height:1.6;">
-
 The information which you provide in this section and in Section 3 (where applicable) will be verified through a leading UK credit reference agency. This is an essential requirement but will be undertaken only if you pass the initial interview stage of your application.
 </p>
 
@@ -385,121 +420,150 @@ The information which you provide in this section and in Section 3 (where applic
 <div class="form-row">
 <label>(i) Owner/occupier: Yes/No</label>
 <div>
-<label><input type="radio" name="owner1"> Yes</label>
-<label><input type="radio" name="owner1"> No</label>
+<label><input type="radio" name="firstApplicantOwnerOccupier" value="Yes"> Yes</label>
+<label><input type="radio" name="firstApplicantOwnerOccupier" value="No"> No</label>
 </div>
 </div>
 
 <div class="form-row">
 <label>(ii) Private Tenant: Yes/No Unfurnished/Furnished</label>
 <div>
-<label><input type="radio" name="tenant1"> Yes</label>
-<label><input type="radio" name="tenant1"> No</label>
-<input type="text" placeholder="Unfurnished/Furnished">
+<label><input type="radio" name="firstApplicantPrivateTenant" value="Yes"> Yes</label>
+<label><input type="radio" name="firstApplicantPrivateTenant" value="No"> No</label>
+<input type="text" name="firstApplicantTenantType" placeholder="Unfurnished/Furnished">
 </div>
 </div>
 
 <div class="form-row">
 <label>(iii) Local Authority Tenant: Yes/No</label>
 <div>
-<label><input type="radio" name="local1"> Yes</label>
-<label><input type="radio" name="local1"> No</label>
+<label><input type="radio" name="firstApplicantLocalAuthorityTenant" value="Yes"> Yes</label>
+<label><input type="radio" name="firstApplicantLocalAuthorityTenant" value="No"> No</label>
 </div>
 </div>
 
 <div class="form-row">
 <label>(iv) Other (please give details):</label>
-<input type="text">
+<input type="text" name="firstApplicantOtherDetails">
 </div>
 
 <div class="form-row">
 <label>If you own your house please state:</label>
 </div>
 
-<div class="form-row"><label>(a) Approximate value:</label><input type="text"></div>
+<div class="form-row">
+<label>(a) Approximate value:</label>
+<input type="text" name="firstApplicantHouseValue">
+</div>
 
 <div class="form-row">
 <label>(b) Do you have a mortgage? Yes/No</label>
 <div>
-<label><input type="radio" name="mortgage1"> Yes</label>
-<label><input type="radio" name="mortgage1"> No</label>
+<label><input type="radio" name="firstApplicantMortgage" value="Yes"> Yes</label>
+<label><input type="radio" name="firstApplicantMortgage" value="No"> No</label>
 </div>
 </div>
 
-<div class="form-row"><label>(i) How much is outstanding?</label><input type="text"></div>
-<div class="form-row"><label>(ii) How much are your monthly repayments?</label><input type="text"></div>
+<div class="form-row">
+<label>(i) How much is outstanding?</label>
+<input type="text" name="firstApplicantMortgageOutstanding">
+</div>
 
-<div class="form-row"><label>(c) Purchase Date:</label><input type="text"></div>
-<div class="form-row"><label>(d) Property in name(s) of:</label><input type="text"></div>
+<div class="form-row">
+<label>(ii) How much are your monthly repayments?</label>
+<input type="text" name="firstApplicantMonthlyRepayments">
+</div>
+
+<div class="form-row">
+<label>(c) Purchase Date:</label>
+<input type="text" name="firstApplicantPurchaseDate">
+</div>
+
+<div class="form-row">
+<label>(d) Property in name(s) of:</label>
+<input type="text" name="firstApplicantPropertyName">
+</div>
 
 <div class="form-row">
 <label>(e) Names of all occupants over the age of 18:</label>
-<textarea></textarea>
-</div>
-
-<div class="form-row"><label>If you live in rented accommodation, state your monthly rent:</label><input type="text"></div>
-
-<div class="form-row">
-<label>What are your total monthly financial outgoings (including mortgage/ rent, payment to credit cards, store cards, HP repayments etc.)?</label>
-<input type="text">
+<textarea name="firstApplicantOccupants"></textarea>
 </div>
 
 <div class="form-row">
-<label>Have you ever been refused credit? Yes/No (If Yes, please give details in Section 6)</label>
+<label>If you live in rented accommodation, state your monthly rent:</label>
+<input type="text" name="firstApplicantMonthlyRent">
+</div>
+
+<div class="form-row">
+<label>What are your total monthly financial outgoings?</label>
+<input type="text" name="firstApplicantFinancialOutgoings">
+</div>
+
+<div class="form-row">
+<label>Have you ever been refused credit?</label>
 <div>
-<label><input type="radio" name="credit1"> Yes</label>
-<label><input type="radio" name="credit1"> No</label>
+<label><input type="radio" name="firstApplicantRefusedCredit" value="Yes"> Yes</label>
+<label><input type="radio" name="firstApplicantRefusedCredit" value="No"> No</label>
 </div>
 </div>
 
 <div class="form-row">
-<label>Have you or any other occupant of your property ever had a County Court judgement registered against you? Yes/No (If Yes, please give details in Section 6)</label>
+<label>County Court judgement registered against you?</label>
 <div>
-<label><input type="radio" name="ccj1"> Yes</label>
-<label><input type="radio" name="ccj1"> No</label>
+<label><input type="radio" name="firstApplicantCCJ" value="Yes"> Yes</label>
+<label><input type="radio" name="firstApplicantCCJ" value="No"> No</label>
 </div>
 </div>
 
 <div class="form-row">
-<label>Have you or any other occupant at your address ever been declared bankrupt? Yes/No (If Yes, please give details in Section 6)</label>
+<label>Ever been declared bankrupt?</label>
 <div>
-<label><input type="radio" name="bankrupt1"> Yes</label>
-<label><input type="radio" name="bankrupt1"> No</label>
+<label><input type="radio" name="firstApplicantBankrupt" value="Yes"> Yes</label>
+<label><input type="radio" name="firstApplicantBankrupt" value="No"> No</label>
 </div>
 </div>
 
 <div class="form-row">
-<label>Have you or any other occupant at your property ever entered into an arrangement with your/their creditors? Yes/No</label>
+<label>Entered into arrangement with creditors?</label>
 <div>
-<label><input type="radio" name="arrangement1"> Yes</label>
-<label><input type="radio" name="arrangement1"> No</label>
+<label><input type="radio" name="firstApplicantCreditArrangement" value="Yes"> Yes</label>
+<label><input type="radio" name="firstApplicantCreditArrangement" value="No"> No</label>
 </div>
 </div>
 
 <div class="form-row">
-<label>Do you have any objections to HSRL making a credit check? Yes/No</label>
+<label>Any objections to HSRL making a credit check?</label>
 <div>
-<label><input type="radio" name="check1"> Yes</label>
-<label><input type="radio" name="check1"> No</label>
+<label><input type="radio" name="firstApplicantCreditCheckObjection" value="Yes"> Yes</label>
+<label><input type="radio" name="firstApplicantCreditCheckObjection" value="No"> No</label>
 </div>
 </div>
 
 <div class="form-row">
 <label>How Much working capital do you have available for this venture?</label>
-<input type="text">
+<input type="text" name="firstApplicantWorkingCapital">
 </div>
 
-<div class="form-row"><label>(a) Bank Account</label><input type="text"></div>
-<div class="form-row"><label>(b) Building Society</label><input type="text"></div>
-<div class="form-row"><label>(c) Other (please state source)</label><input type="text"></div>
+<div class="form-row">
+<label>(a) Bank Account</label>
+<input type="text" name="firstApplicantBankAccount">
+</div>
+
+<div class="form-row">
+<label>(b) Building Society</label>
+<input type="text" name="firstApplicantBuildingSociety">
+</div>
+
+<div class="form-row">
+<label>(c) Other (please state source)</label>
+<input type="text" name="firstApplicantOtherSource">
+</div>
 
 </div>
 
 <!-- SECOND APPLICANT -->
 <div id="second2" class="hidden">
 <h3>Second Applicant</h3>
-
-<!-- SAME STRUCTURE (only name changed to ...2) -->
 
 <div class="form-row">
 <label>With regard to the address given in Section 1, please complete the following:</label>
@@ -508,101 +572,144 @@ The information which you provide in this section and in Section 3 (where applic
 <div class="form-row">
 <label>(i) Owner/occupier: Yes/No</label>
 <div>
-<label><input type="radio" name="owner2"> Yes</label>
-<label><input type="radio" name="owner2"> No</label>
+<label><input type="radio" name="secondApplicantOwnerOccupier" value="Yes"> Yes</label>
+<label><input type="radio" name="secondApplicantOwnerOccupier" value="No"> No</label>
 </div>
 </div>
 
 <div class="form-row">
 <label>(ii) Private Tenant: Yes/No Unfurnished/Furnished</label>
 <div>
-<label><input type="radio" name="tenant2"> Yes</label>
-<label><input type="radio" name="tenant2"> No</label>
-<input type="text" placeholder="Unfurnished/Furnished">
+<label><input type="radio" name="secondApplicantPrivateTenant" value="Yes"> Yes</label>
+<label><input type="radio" name="secondApplicantPrivateTenant" value="No"> No</label>
+<input type="text" name="secondApplicantTenantType" placeholder="Unfurnished/Furnished">
 </div>
 </div>
 
 <div class="form-row">
 <label>(iii) Local Authority Tenant: Yes/No</label>
 <div>
-<label><input type="radio" name="local2"> Yes</label>
-<label><input type="radio" name="local2"> No</label>
+<label><input type="radio" name="secondApplicantLocalAuthorityTenant" value="Yes"> Yes</label>
+<label><input type="radio" name="secondApplicantLocalAuthorityTenant" value="No"> No</label>
 </div>
 </div>
 
-<div class="form-row"><label>(iv) Other (please give details):</label><input type="text"></div>
+<div class="form-row">
+<label>(iv) Other (please give details):</label>
+<input type="text" name="secondApplicantOtherDetails">
+</div>
 
-<div class="form-row"><label>If you own your house please state:</label></div>
+<div class="form-row">
+<label>If you own your house please state:</label>
+</div>
 
-<div class="form-row"><label>(a) Approximate value:</label><input type="text"></div>
+<div class="form-row">
+<label>(a) Approximate value:</label>
+<input type="text" name="secondApplicantHouseValue">
+</div>
 
 <div class="form-row">
 <label>(b) Do you have a mortgage? Yes/No</label>
 <div>
-<label><input type="radio" name="mortgage2"> Yes</label>
-<label><input type="radio" name="mortgage2"> No</label>
+<label><input type="radio" name="secondApplicantMortgage" value="Yes"> Yes</label>
+<label><input type="radio" name="secondApplicantMortgage" value="No"> No</label>
 </div>
-</div>
-
-<div class="form-row"><label>(i) How much is outstanding?</label><input type="text"></div>
-<div class="form-row"><label>(ii) How much are your monthly repayments?</label><input type="text"></div>
-
-<div class="form-row"><label>(c) Purchase Date:</label><input type="text"></div>
-<div class="form-row"><label>(d) Property in name(s) of:</label><input type="text"></div>
-
-<div class="form-row"><label>(e) Names of all occupants over the age of 18:</label><textarea></textarea></div>
-
-<div class="form-row"><label>If you live in rented accommodation, state your monthly rent:</label><input type="text"></div>
-
-<div class="form-row">
-<label>What are your total monthly financial outgoings (including mortgage/ rent, payment to credit cards, store cards, HP repayments etc.)?</label>
-<input type="text">
 </div>
 
 <div class="form-row">
-<label>Have you ever been refused credit? Yes/No (If Yes, please give details in Section 6)</label>
+<label>(i) How much is outstanding?</label>
+<input type="text" name="secondApplicantMortgageOutstanding">
+</div>
+
+<div class="form-row">
+<label>(ii) How much are your monthly repayments?</label>
+<input type="text" name="secondApplicantMonthlyRepayments">
+</div>
+
+<div class="form-row">
+<label>(c) Purchase Date:</label>
+<input type="text" name="secondApplicantPurchaseDate">
+</div>
+
+<div class="form-row">
+<label>(d) Property in name(s) of:</label>
+<input type="text" name="secondApplicantPropertyName">
+</div>
+
+<div class="form-row">
+<label>(e) Names of all occupants over the age of 18:</label>
+<textarea name="secondApplicantOccupants"></textarea>
+</div>
+
+<div class="form-row">
+<label>If you live in rented accommodation, state your monthly rent:</label>
+<input type="text" name="secondApplicantMonthlyRent">
+</div>
+
+<div class="form-row">
+<label>What are your total monthly financial outgoings?</label>
+<input type="text" name="secondApplicantFinancialOutgoings">
+</div>
+
+<div class="form-row">
+<label>Have you ever been refused credit?</label>
 <div>
-<label><input type="radio" name="credit2"> Yes</label>
-<label><input type="radio" name="credit2"> No</label>
+<label><input type="radio" name="secondApplicantRefusedCredit" value="Yes"> Yes</label>
+<label><input type="radio" name="secondApplicantRefusedCredit" value="No"> No</label>
 </div>
 </div>
 
 <div class="form-row">
-<label>Have you or any other occupant of your property ever had a County Court judgement registered against you? Yes/No (If Yes, please give details in Section 6)</label>
+<label>County Court judgement registered against you?</label>
 <div>
-<label><input type="radio" name="ccj2"> Yes</label>
-<label><input type="radio" name="ccj2"> No</label>
+<label><input type="radio" name="secondApplicantCCJ" value="Yes"> Yes</label>
+<label><input type="radio" name="secondApplicantCCJ" value="No"> No</label>
 </div>
 </div>
 
 <div class="form-row">
-<label>Have you or any other occupant at your address ever been declared bankrupt? Yes/No (If Yes, please give details in Section 6)</label>
+<label>Ever been declared bankrupt?</label>
 <div>
-<label><input type="radio" name="bankrupt2"> Yes</label>
-<label><input type="radio" name="bankrupt2"> No</label>
+<label><input type="radio" name="secondApplicantBankrupt" value="Yes"> Yes</label>
+<label><input type="radio" name="secondApplicantBankrupt" value="No"> No</label>
 </div>
 </div>
 
 <div class="form-row">
-<label>Have you or any other occupant at your property ever entered into an arrangement with your/their creditors? Yes/No</label>
+<label>Entered into arrangement with creditors?</label>
 <div>
-<label><input type="radio" name="arrangement2"> Yes</label>
-<label><input type="radio" name="arrangement2"> No</label>
+<label><input type="radio" name="secondApplicantCreditArrangement" value="Yes"> Yes</label>
+<label><input type="radio" name="secondApplicantCreditArrangement" value="No"> No</label>
 </div>
 </div>
 
 <div class="form-row">
-<label>Do you have any objections to HSRL making a credit check? Yes/No</label>
+<label>Any objections to HSRL making a credit check?</label>
 <div>
-<label><input type="radio" name="check2"> Yes</label>
-<label><input type="radio" name="check2"> No</label>
+<label><input type="radio" name="secondApplicantCreditCheckObjection" value="Yes"> Yes</label>
+<label><input type="radio" name="secondApplicantCreditCheckObjection" value="No"> No</label>
 </div>
 </div>
 
-<div class="form-row"><label>How Much working capital do you have available for this venture?</label><input type="text"></div>
-<div class="form-row"><label>(a) Bank Account</label><input type="text"></div>
-<div class="form-row"><label>(b) Building Society</label><input type="text"></div>
-<div class="form-row"><label>(c) Other (please state source)</label><input type="text"></div>
+<div class="form-row">
+<label>How Much working capital do you have available for this venture?</label>
+<input type="text" name="secondApplicantWorkingCapital">
+</div>
+
+<div class="form-row">
+<label>(a) Bank Account</label>
+<input type="text" name="secondApplicantBankAccount">
+</div>
+
+<div class="form-row">
+<label>(b) Building Society</label>
+<input type="text" name="secondApplicantBuildingSociety">
+</div>
+
+<div class="form-row">
+<label>(c) Other (please state source)</label>
+<input type="text" name="secondApplicantOtherSource">
+</div>
 
 </div>
 
@@ -616,10 +723,8 @@ The information which you provide in this section and in Section 3 (where applic
 
 <p style="font-size:14px; margin-bottom:20px; line-height:1.6;">
 
- 
-Please provide details of three credit references: one bank reference and either two trade references, or if you have not previously been self em
-ployed two of either credit card or store card references. Should it be found that false reference and/or information has been given by any applicant 
-then the training/contract management agreement may be terminated without notice
+Please provide details of three credit references: one bank reference and either two trade references, or if you have not previously been self employed two of either credit card or store card references. Should it be found that false reference and/or information has been given by any applicant then the training/contract management agreement may be terminated without notice
+
 </p>
 
 <div class="grid-2">
@@ -628,61 +733,162 @@ then the training/contract management agreement may be terminated without notice
 <div>
 <h3>First Applicant</h3>
 
-<div class="form-row"><label>Name of Bank:</label><input type="text"></div>
-<div class="form-row"><label>Address:</label><textarea></textarea></div>
+<div class="form-row">
+<label>Name of Bank:</label>
+<input type="text" name="firstApplicantBankName">
+</div>
 
-<div class="form-row"><label>Account No:</label><input type="text"></div>
-<div class="form-row"><label>Sort Code:</label><input type="text"></div>
+<div class="form-row">
+<label>Address:</label>
+<textarea name="firstApplicantBankAddress"></textarea>
+</div>
 
-<div class="form-row"><label>Name of Account:</label><input type="text"></div>
+<div class="form-row">
+<label>Account No:</label>
+<input type="text" name="firstApplicantAccountNo">
+</div>
 
-<div class="form-row"><label>1st Trade Referee:</label><input type="text"></div>
-<div class="form-row"><label>Address:</label><textarea></textarea></div>
+<div class="form-row">
+<label>Sort Code:</label>
+<input type="text" name="firstApplicantSortCode">
+</div>
 
-<div class="form-row"><label>2nd Trade Referee:</label><input type="text"></div>
-<div class="form-row"><label>Address:</label><textarea></textarea></div>
+<div class="form-row">
+<label>Name of Account:</label>
+<input type="text" name="firstApplicantAccountName">
+</div>
+
+<div class="form-row">
+<label>1st Trade Referee:</label>
+<input type="text" name="firstApplicantTradeReferee1">
+</div>
+
+<div class="form-row">
+<label>Address:</label>
+<textarea name="firstApplicantTradeReferee1Address"></textarea>
+</div>
+
+<div class="form-row">
+<label>2nd Trade Referee:</label>
+<input type="text" name="firstApplicantTradeReferee2">
+</div>
+
+<div class="form-row">
+<label>Address:</label>
+<textarea name="firstApplicantTradeReferee2Address"></textarea>
+</div>
 
 <br>
 
 <label><strong>Please supply the names and addresses of two character references.</strong></label>
 
-<div class="form-row"><label>Name:</label><input type="text"></div>
-<div class="form-row"><label>Address:</label><textarea></textarea></div>
+<div class="form-row">
+<label>Name:</label>
+<input type="text" name="firstApplicantCharacterReference1Name">
+</div>
 
-<div class="form-row"><label>Name:</label><input type="text"></div>
-<div class="form-row"><label>Address:</label><textarea></textarea></div>
+<div class="form-row">
+<label>Address:</label>
+<textarea name="firstApplicantCharacterReference1Address"></textarea>
+</div>
+
+<div class="form-row">
+<label>Name:</label>
+<input type="text" name="firstApplicantCharacterReference2Name">
+</div>
+
+<div class="form-row">
+<label>Address:</label>
+<textarea name="firstApplicantCharacterReference2Address"></textarea>
+</div>
 
 <br>
 
 <label><strong>Please give details of present (or last) employer (no employer will be contacted without your permission). References from your current employer will only be requested after an offer of service station contract management has been made and accepted. If self-employed please complete Section 4.</strong></label>
 
-<div class="form-row"><label>Name of Employer:</label><input type="text"></div>
-<div class="form-row"><label>Nature of Business;</label><input type="text"></div>
-<div class="form-row"><label>Address;</label><textarea></textarea></div>
+<div class="form-row">
+<label>Name of Employer:</label>
+<input type="text" name="firstApplicantEmployerName">
+</div>
 
-<div class="form-row"><label>Position Held:</label><input type="text"></div>
-<div class="form-row"><label>Salary:</label><input type="text"></div>
+<div class="form-row">
+<label>Nature of Business:</label>
+<input type="text" name="firstApplicantBusinessNature">
+</div>
 
-<div class="form-row"><label>Commencement date:</label><input type="text"></div>
-<div class="form-row"><label>Date of leaving</label><input type="text"></div>
+<div class="form-row">
+<label>Address:</label>
+<textarea name="firstApplicantEmployerAddress"></textarea>
+</div>
 
-<div class="form-row"><label>Reason for leaving:</label><input type="text"></div>
+<div class="form-row">
+<label>Position Held:</label>
+<input type="text" name="firstApplicantPositionHeld">
+</div>
+
+<div class="form-row">
+<label>Salary:</label>
+<input type="text" name="firstApplicantSalary">
+</div>
+
+<div class="form-row">
+<label>Commencement date:</label>
+<input type="text" name="firstApplicantCommencementDate">
+</div>
+
+<div class="form-row">
+<label>Date of leaving:</label>
+<input type="text" name="firstApplicantLeavingDate">
+</div>
+
+<div class="form-row">
+<label>Reason for leaving:</label>
+<input type="text" name="firstApplicantLeavingReason">
+</div>
 
 <br>
 
 <label><strong>If you have been in your present employment (or own business venture) for less than two years, please provide employer’s details.</strong></label>
 
-<div class="form-row"><label>Name of Employer:</label><input type="text"></div>
-<div class="form-row"><label>Nature of Business;</label><input type="text"></div>
-<div class="form-row"><label>Address:</label><textarea></textarea></div>
+<div class="form-row">
+<label>Name of Employer:</label>
+<input type="text" name="firstApplicantPreviousEmployerName">
+</div>
 
-<div class="form-row"><label>Position held:</label><input type="text"></div>
-<div class="form-row"><label>Salary:</label><input type="text"></div>
+<div class="form-row">
+<label>Nature of Business:</label>
+<input type="text" name="firstApplicantPreviousBusinessNature">
+</div>
 
-<div class="form-row"><label>Commencement date:</label><input type="text"></div>
-<div class="form-row"><label>Date of leaving:</label><input type="text"></div>
+<div class="form-row">
+<label>Address:</label>
+<textarea name="firstApplicantPreviousEmployerAddress"></textarea>
+</div>
 
-<div class="form-row"><label>Reason for leaving:</label><input type="text"></div>
+<div class="form-row">
+<label>Position held:</label>
+<input type="text" name="firstApplicantPreviousPositionHeld">
+</div>
+
+<div class="form-row">
+<label>Salary:</label>
+<input type="text" name="firstApplicantPreviousSalary">
+</div>
+
+<div class="form-row">
+<label>Commencement date:</label>
+<input type="text" name="firstApplicantPreviousCommencementDate">
+</div>
+
+<div class="form-row">
+<label>Date of leaving:</label>
+<input type="text" name="firstApplicantPreviousLeavingDate">
+</div>
+
+<div class="form-row">
+<label>Reason for leaving:</label>
+<input type="text" name="firstApplicantPreviousLeavingReason">
+</div>
 
 </div>
 
@@ -690,61 +896,162 @@ then the training/contract management agreement may be terminated without notice
 <div id="second3" class="hidden">
 <h3>Second Applicant</h3>
 
-<div class="form-row"><label>Name of Bank:</label><input type="text"></div>
-<div class="form-row"><label>Address:</label><textarea></textarea></div>
+<div class="form-row">
+<label>Name of Bank:</label>
+<input type="text" name="secondApplicantBankName">
+</div>
 
-<div class="form-row"><label>Account No:</label><input type="text"></div>
-<div class="form-row"><label>Sort Code:</label><input type="text"></div>
+<div class="form-row">
+<label>Address:</label>
+<textarea name="secondApplicantBankAddress"></textarea>
+</div>
 
-<div class="form-row"><label>Name of Account:</label><input type="text"></div>
+<div class="form-row">
+<label>Account No:</label>
+<input type="text" name="secondApplicantAccountNo">
+</div>
 
-<div class="form-row"><label>1st Trade Referee:</label><input type="text"></div>
-<div class="form-row"><label>Address:</label><textarea></textarea></div>
+<div class="form-row">
+<label>Sort Code:</label>
+<input type="text" name="secondApplicantSortCode">
+</div>
 
-<div class="form-row"><label>2nd Trade Referee:</label><input type="text"></div>
-<div class="form-row"><label>Address:</label><textarea></textarea></div>
+<div class="form-row">
+<label>Name of Account:</label>
+<input type="text" name="secondApplicantAccountName">
+</div>
+
+<div class="form-row">
+<label>1st Trade Referee:</label>
+<input type="text" name="secondApplicantTradeReferee1">
+</div>
+
+<div class="form-row">
+<label>Address:</label>
+<textarea name="secondApplicantTradeReferee1Address"></textarea>
+</div>
+
+<div class="form-row">
+<label>2nd Trade Referee:</label>
+<input type="text" name="secondApplicantTradeReferee2">
+</div>
+
+<div class="form-row">
+<label>Address:</label>
+<textarea name="secondApplicantTradeReferee2Address"></textarea>
+</div>
 
 <br>
 
 <label><strong>Please supply the names and addresses of two character references.</strong></label>
 
-<div class="form-row"><label>Name:</label><input type="text"></div>
-<div class="form-row"><label>Address:</label><textarea></textarea></div>
+<div class="form-row">
+<label>Name:</label>
+<input type="text" name="secondApplicantCharacterReference1Name">
+</div>
 
-<div class="form-row"><label>Name:</label><input type="text"></div>
-<div class="form-row"><label>Address:</label><textarea></textarea></div>
+<div class="form-row">
+<label>Address:</label>
+<textarea name="secondApplicantCharacterReference1Address"></textarea>
+</div>
+
+<div class="form-row">
+<label>Name:</label>
+<input type="text" name="secondApplicantCharacterReference2Name">
+</div>
+
+<div class="form-row">
+<label>Address:</label>
+<textarea name="secondApplicantCharacterReference2Address"></textarea>
+</div>
 
 <br>
 
-<label><strong>Please give details of present (or last) employer (no employer will be contacted without your permission). References from your current employer will only be requested after an offer of service station contract management has been made and accepted. If self-employed please complete Section 4.</strong></label>
+<label><strong>Please give details of present (or last) employer.</strong></label>
 
-<div class="form-row"><label>Name of Employer:</label><input type="text"></div>
-<div class="form-row"><label>Nature of Business;</label><input type="text"></div>
-<div class="form-row"><label>Address;</label><textarea></textarea></div>
+<div class="form-row">
+<label>Name of Employer:</label>
+<input type="text" name="secondApplicantEmployerName">
+</div>
 
-<div class="form-row"><label>Position Held:</label><input type="text"></div>
-<div class="form-row"><label>Salary:</label><input type="text"></div>
+<div class="form-row">
+<label>Nature of Business:</label>
+<input type="text" name="secondApplicantBusinessNature">
+</div>
 
-<div class="form-row"><label>Commencement date:</label><input type="text"></div>
-<div class="form-row"><label>Date of leaving</label><input type="text"></div>
+<div class="form-row">
+<label>Address:</label>
+<textarea name="secondApplicantEmployerAddress"></textarea>
+</div>
 
-<div class="form-row"><label>Reason for leaving:</label><input type="text"></div>
+<div class="form-row">
+<label>Position Held:</label>
+<input type="text" name="secondApplicantPositionHeld">
+</div>
+
+<div class="form-row">
+<label>Salary:</label>
+<input type="text" name="secondApplicantSalary">
+</div>
+
+<div class="form-row">
+<label>Commencement date:</label>
+<input type="text" name="secondApplicantCommencementDate">
+</div>
+
+<div class="form-row">
+<label>Date of leaving:</label>
+<input type="text" name="secondApplicantLeavingDate">
+</div>
+
+<div class="form-row">
+<label>Reason for leaving:</label>
+<input type="text" name="secondApplicantLeavingReason">
+</div>
 
 <br>
 
 <label><strong>If you have been in your present employment (or own business venture) for less than two years, please provide employer’s details.</strong></label>
 
-<div class="form-row"><label>Name of Employer:</label><input type="text"></div>
-<div class="form-row"><label>Nature of Business;</label><input type="text"></div>
-<div class="form-row"><label>Address:</label><textarea></textarea></div>
+<div class="form-row">
+<label>Name of Employer:</label>
+<input type="text" name="secondApplicantPreviousEmployerName">
+</div>
 
-<div class="form-row"><label>Position held:</label><input type="text"></div>
-<div class="form-row"><label>Salary:</label><input type="text"></div>
+<div class="form-row">
+<label>Nature of Business:</label>
+<input type="text" name="secondApplicantPreviousBusinessNature">
+</div>
 
-<div class="form-row"><label>Commencement date:</label><input type="text"></div>
-<div class="form-row"><label>Date of leaving:</label><input type="text"></div>
+<div class="form-row">
+<label>Address:</label>
+<textarea name="secondApplicantPreviousEmployerAddress"></textarea>
+</div>
 
-<div class="form-row"><label>Reason for leaving:</label><input type="text"></div>
+<div class="form-row">
+<label>Position held:</label>
+<input type="text" name="secondApplicantPreviousPositionHeld">
+</div>
+
+<div class="form-row">
+<label>Salary:</label>
+<input type="text" name="secondApplicantPreviousSalary">
+</div>
+
+<div class="form-row">
+<label>Commencement date:</label>
+<input type="text" name="secondApplicantPreviousCommencementDate">
+</div>
+
+<div class="form-row">
+<label>Date of leaving:</label>
+<input type="text" name="secondApplicantPreviousLeavingDate">
+</div>
+
+<div class="form-row">
+<label>Reason for leaving:</label>
+<input type="text" name="secondApplicantPreviousLeavingReason">
+</div>
 
 </div>
 
@@ -762,37 +1069,71 @@ then the training/contract management agreement may be terminated without notice
 <div>
 <h3>First Applicant</h3>
 
-<div class="form-row"><label>Business/Company name and Registration No:</label><input type="text"></div>
+<div class="form-row">
+<label>Business/Company name and Registration No:</label>
+<input type="text" name="firstApplicantBusinessCompanyName">
+</div>
 
-<div class="form-row"><label>Nature of business:</label><input type="text"></div>
+<div class="form-row">
+<label>Nature of business:</label>
+<input type="text" name="firstApplicantBusinessNature">
+</div>
 
-<div class="form-row"><label>Address:</label><textarea></textarea></div>
+<div class="form-row">
+<label>Address:</label>
+<textarea name="firstApplicantBusinessAddress"></textarea>
+</div>
 
-<div class="form-row"><label>How long has the business been established?</label><input type="text"></div>
+<div class="form-row">
+<label>How long has the business been established?</label>
+<input type="text" name="firstApplicantBusinessEstablished">
+</div>
 
-<div class="form-row"><label>Number of employees:</label><input type="text"></div>
+<div class="form-row">
+<label>Number of employees:</label>
+<input type="text" name="firstApplicantEmployeeCount">
+</div>
 
-<div class="form-row"><label>If you have ceased trading, please state reason:</label><textarea></textarea></div>
+<div class="form-row">
+<label>If you have ceased trading, please state reason:</label>
+<textarea name="firstApplicantCeasedTradingReason"></textarea>
+</div>
 
 <div class="form-row">
 <label>If you currently run your own business, would you intend to continue with it? Yes/No</label>
 <div>
-<label><input type="radio" name="continue1"> Yes</label>
-<label><input type="radio" name="continue1"> No</label>
+<label><input type="radio" name="firstApplicantContinueBusiness" value="Yes"> Yes</label>
+<label><input type="radio" name="firstApplicantContinueBusiness" value="No"> No</label>
 </div>
 </div>
 
-<div class="form-row"><label>If ‘Yes’ who would run:</label></div>
+<div class="form-row">
+<label>If ‘Yes’ who would run:</label>
+</div>
 
-<div class="form-row"><label>(a) your current business?</label><input type="text"></div>
+<div class="form-row">
+<label>(a) your current business?</label>
+<input type="text" name="firstApplicantCurrentBusinessRunner">
+</div>
 
-<div class="form-row"><label>(b) this new opportunity?</label><input type="text"></div>
+<div class="form-row">
+<label>(b) this new opportunity?</label>
+<input type="text" name="firstApplicantNewOpportunityRunner">
+</div>
 
-<div class="form-row"><label>If you have been self employed for less than two years please provide:</label></div>
+<div class="form-row">
+<label>If you have been self employed for less than two years please provide:</label>
+</div>
 
-<div class="form-row"><label>(a) details of previous employment (Section 3)</label><input type="text"></div>
+<div class="form-row">
+<label>(a) details of previous employment (Section 3)</label>
+<input type="text" name="firstApplicantPreviousEmploymentDetails">
+</div>
 
-<div class="form-row"><label>(b) details of your previous business interests (Section 6)</label><input type="text"></div>
+<div class="form-row">
+<label>(b) details of your previous business interests (Section 6)</label>
+<input type="text" name="firstApplicantPreviousBusinessInterests">
+</div>
 
 </div>
 
@@ -800,44 +1141,77 @@ then the training/contract management agreement may be terminated without notice
 <div id="second4" class="hidden">
 <h3>Second Applicant</h3>
 
-<div class="form-row"><label>Business/Company name and Registration No:</label><input type="text"></div>
+<div class="form-row">
+<label>Business/Company name and Registration No:</label>
+<input type="text" name="secondApplicantBusinessCompanyName">
+</div>
 
-<div class="form-row"><label>Nature of business:</label><input type="text"></div>
+<div class="form-row">
+<label>Nature of business:</label>
+<input type="text" name="secondApplicantBusinessNature">
+</div>
 
-<div class="form-row"><label>Address:</label><textarea></textarea></div>
+<div class="form-row">
+<label>Address:</label>
+<textarea name="secondApplicantBusinessAddress"></textarea>
+</div>
 
-<div class="form-row"><label>How long has the business been established?</label><input type="text"></div>
+<div class="form-row">
+<label>How long has the business been established?</label>
+<input type="text" name="secondApplicantBusinessEstablished">
+</div>
 
-<div class="form-row"><label>Number of employees:</label><input type="text"></div>
+<div class="form-row">
+<label>Number of employees:</label>
+<input type="text" name="secondApplicantEmployeeCount">
+</div>
 
-<div class="form-row"><label>If you have ceased trading, please state reason:</label><textarea></textarea></div>
+<div class="form-row">
+<label>If you have ceased trading, please state reason:</label>
+<textarea name="secondApplicantCeasedTradingReason"></textarea>
+</div>
 
 <div class="form-row">
 <label>If you currently run your own business, would you intend to continue with it? Yes/No</label>
 <div>
-<label><input type="radio" name="continue2"> Yes</label>
-<label><input type="radio" name="continue2"> No</label>
+<label><input type="radio" name="secondApplicantContinueBusiness" value="Yes"> Yes</label>
+<label><input type="radio" name="secondApplicantContinueBusiness" value="No"> No</label>
 </div>
 </div>
 
-<div class="form-row"><label>If ‘Yes’ who would run:</label></div>
+<div class="form-row">
+<label>If ‘Yes’ who would run:</label>
+</div>
 
-<div class="form-row"><label>(a) your current business?</label><input type="text"></div>
+<div class="form-row">
+<label>(a) your current business?</label>
+<input type="text" name="secondApplicantCurrentBusinessRunner">
+</div>
 
-<div class="form-row"><label>(b) this new opportunity?</label><input type="text"></div>
+<div class="form-row">
+<label>(b) this new opportunity?</label>
+<input type="text" name="secondApplicantNewOpportunityRunner">
+</div>
 
-<div class="form-row"><label>If you have been self employed for less than two years please provide:</label></div>
+<div class="form-row">
+<label>If you have been self employed for less than two years please provide:</label>
+</div>
 
-<div class="form-row"><label>(a) details of previous employment (Section 3)</label><input type="text"></div>
+<div class="form-row">
+<label>(a) details of previous employment (Section 3)</label>
+<input type="text" name="secondApplicantPreviousEmploymentDetails">
+</div>
 
-<div class="form-row"><label>(b) details of your previous business interests (Section 6)</label><input type="text"></div>
-
+<div class="form-row">
+<label>(b) details of your previous business interests (Section 6)</label>
+<input type="text" name="secondApplicantPreviousBusinessInterests">
 </div>
 
 </div>
+
+</div>
 </div>
 
-<!-- SECTION 5 -->
 <!-- SECTION 5 -->
 <div class="form-section">
 <h2>Section 5 - Station Preferences</h2>
@@ -850,12 +1224,17 @@ then the training/contract management agreement may be terminated without notice
 
 <div class="form-row">
 <label>When would you be available to commence training prior to being appointed to manage a service station?</label>
-<textarea placeholder="Enter availability details"></textarea>
+<textarea 
+name="firstApplicantTrainingAvailability"
+placeholder="Enter availability details"></textarea>
 </div>
 
 <div class="form-row">
 <label>To ensure that the right person within HSRL reviews your application, please state which country you would like to operate a service station:</label>
-<input type="text" placeholder="Enter country name">
+<input 
+type="text" 
+name="firstApplicantPreferredCountry"
+placeholder="Enter country name">
 </div>
 
 </div>
@@ -866,12 +1245,17 @@ then the training/contract management agreement may be terminated without notice
 
 <div class="form-row">
 <label>When would you be available to commence training prior to being appointed to manage a service station?</label>
-<textarea placeholder="Enter availability details"></textarea>
+<textarea 
+name="secondApplicantTrainingAvailability"
+placeholder="Enter availability details"></textarea>
 </div>
 
 <div class="form-row">
 <label>To ensure that the right person within HSRL reviews your application, please state which country you would like to operate a service station:</label>
-<input type="text" placeholder="Enter country name">
+<input 
+type="text" 
+name="secondApplicantPreferredCountry"
+placeholder="Enter country name">
 </div>
 
 </div>
@@ -879,7 +1263,6 @@ then the training/contract management agreement may be terminated without notice
 </div>
 </div>
 
-<!-- SECTION 6 -->
 <!-- SECTION 6 -->
 <div class="form-section">
 <h2>Section 6 - Additional Information</h2>
@@ -894,13 +1277,23 @@ This may include details referenced in earlier sections (e.g. convictions, emplo
 <!-- FIRST APPLICANT -->
 <div>
 <h3>First Applicant</h3>
-<textarea rows="8" placeholder="Enter any additional details relevant to your application..."></textarea>
+
+<textarea 
+rows="8"
+name="firstApplicantAdditionalInformation"
+placeholder="Enter any additional details relevant to your application..."></textarea>
+
 </div>
 
 <!-- SECOND APPLICANT -->
 <div id="second6" class="hidden">
 <h3>Second Applicant</h3>
-<textarea rows="8" placeholder="Enter any additional details relevant to your application..."></textarea>
+
+<textarea 
+rows="8"
+name="secondApplicantAdditionalInformation"
+placeholder="Enter any additional details relevant to your application..."></textarea>
+
 </div>
 
 </div>
@@ -913,13 +1306,12 @@ This may include details referenced in earlier sections (e.g. convictions, emplo
 
 <p>
 All personal information provided to HSRL in this Application Form will be held and used solely for the purpose of 
-processing your application for service station contract management with HSRL.  In the event that your application is 
+processing your application for service station contract management with HSRL. In the event that your application is 
 unsuccessful, this Application Form together with any other personal information provided by you in support of your 
 application, will be destroyed no later than six months following our notification to you that your application has been 
 unsuccessful. Completion and signature of the declaration of this Application Form will be deemed to be your explicit 
-consent for HSRL to hold and use your personal information in accordance with this privacy statement. 
+consent for HSRL to hold and use your personal information in accordance with this privacy statement.
 </p>
-
 
 </div>
 
@@ -930,19 +1322,18 @@ consent for HSRL to hold and use your personal information in accordance with th
 <p><strong>All applicants should sign the declaration.</strong></p>
 
 <p>
- 
+
 I/We hereby declare that all information which has been given on this form is complete and accurate and understand 
-that any offer from HSRL arising from this application is subject to: 
+that any offer from HSRL arising from this application is subject to:
+
 </p>
 
 <ul style="margin-left:20px;">
 <li>(i) Satisfactory references</li>
 <li>(ii) Credit clearance</li>
 <li>(iii) Approval of the Directors of HSRL</li>
-<li>(iv)  Termination in the event that any of the information provided by me/us in support of my/our application proves to 
-be untrue: </li>
-<li>(v) Completion of a service station contract management agreement and any other relevant agreements between HSRL 
-and me/us and any agreements between me/us and any relevant third party. </li>
+<li>(iv) Termination in the event that any of the information provided by me/us in support of my/our application proves to be untrue:</li>
+<li>(v) Completion of a service station contract management agreement and any other relevant agreements between HSRL and me/us and any agreements between me/us and any relevant third party.</li>
 </ul>
 
 <br>
@@ -952,29 +1343,43 @@ and me/us and any agreements between me/us and any relevant third party. </li>
 <!-- FIRST APPLICANT SIGN -->
 <div>
 <h3>First Applicant</h3>
+
 <div class="form-row">
 <label>Signature:</label>
-<input type="text" placeholder="Type full name as signature">
+<input 
+type="text" 
+name="firstApplicantSignature"
+placeholder="Type full name as signature">
 </div>
 
 <div class="form-row">
 <label>Date:</label>
-<input type="date">
+<input 
+type="date" 
+name="firstApplicantSignatureDate">
 </div>
+
 </div>
 
 <!-- SECOND APPLICANT SIGN -->
 <div id="second7" class="hidden">
 <h3>Second Applicant</h3>
+
 <div class="form-row">
 <label>Signature:</label>
-<input type="text" placeholder="Type full name as signature">
+<input 
+type="text" 
+name="secondApplicantSignature"
+placeholder="Type full name as signature">
 </div>
 
 <div class="form-row">
 <label>Date:</label>
-<input type="date">
+<input 
+type="date" 
+name="secondApplicantSignatureDate">
 </div>
+
 </div>
 
 </div>
@@ -982,13 +1387,17 @@ and me/us and any agreements between me/us and any relevant third party. </li>
 <!-- CONSENT CHECKBOX -->
 <div style="margin-top:20px;">
 <label>
-<input type="checkbox" required>
- I confirm that I have read and agree to the Data Protection statement and Declaration.
+<input 
+type="checkbox" 
+name="declarationConsent"
+value="Accepted"
+required>
+
+I confirm that I have read and agree to the Data Protection statement and Declaration.
 </label>
 </div>
 
 </div>
-
 
 <!-- HSRL OFFICE USE ONLY -->
 <div class="form-section">
@@ -1000,17 +1409,26 @@ Each applicant must produce one of the following by way of acceptable evidence o
 
 <div class="form-row">
 <label>Valid full passport:</label>
-<input type="checkbox"> 
+<input 
+type="checkbox" 
+name="validFullPassport" 
+value="Yes">
 </div>
 
 <div class="form-row">
 <label>Photocard Driving Licence and counterpart:</label>
-<input type="checkbox"> 
+<input 
+type="checkbox" 
+name="photocardDrivingLicence" 
+value="Yes">
 </div>
 
 <div class="form-row">
 <label>National Identity Card:</label>
-<input type="checkbox"> 
+<input 
+type="checkbox" 
+name="nationalIdentityCard" 
+value="Yes">
 </div>
 
 <br>
@@ -1022,17 +1440,71 @@ And two from any of the following:
 <div class="grid-2">
 
 <div>
-<label><input type="checkbox"> Bank / Building Society Passbook</label><br>
-<label><input type="checkbox"> Credit / Debit Card</label><br>
-<label><input type="checkbox"> Utility Bill (e.g. water, electricity, gas)</label><br>
-<label><input type="checkbox"> Mortgage Statement</label>
+<label>
+<input 
+type="checkbox" 
+name="bankPassbook" 
+value="Yes"> 
+Bank / Building Society Passbook
+</label><br>
+
+<label>
+<input 
+type="checkbox" 
+name="creditDebitCard" 
+value="Yes"> 
+Credit / Debit Card
+</label><br>
+
+<label>
+<input 
+type="checkbox" 
+name="utilityBill" 
+value="Yes"> 
+Utility Bill (e.g. water, electricity, gas)
+</label><br>
+
+<label>
+<input 
+type="checkbox" 
+name="mortgageStatement" 
+value="Yes"> 
+Mortgage Statement
+</label>
 </div>
 
 <div>
-<label><input type="checkbox"> Council Tax Demand</label><br>
-<label><input type="checkbox"> Inland Revenue Notice of Coding</label><br>
-<label><input type="checkbox"> Bank / Building Society / Credit Card Statement</label><br>
-<label><input type="checkbox"> TV / Vehicle Licence Reminder</label>
+<label>
+<input 
+type="checkbox" 
+name="councilTaxDemand" 
+value="Yes"> 
+Council Tax Demand
+</label><br>
+
+<label>
+<input 
+type="checkbox" 
+name="inlandRevenueNotice" 
+value="Yes"> 
+Inland Revenue Notice of Coding
+</label><br>
+
+<label>
+<input 
+type="checkbox" 
+name="bankStatement" 
+value="Yes"> 
+Bank / Building Society / Credit Card Statement
+</label><br>
+
+<label>
+<input 
+type="checkbox" 
+name="tvVehicleLicenceReminder" 
+value="Yes"> 
+TV / Vehicle Licence Reminder
+</label>
 </div>
 
 </div>
@@ -1041,12 +1513,16 @@ And two from any of the following:
 
 <div class="form-row">
 <label>The above were produced to me and verified on (Date):</label>
-<input type="text">
+<input 
+type="text" 
+name="verificationDate">
 </div>
 
 <div class="form-row">
 <label>Signature:</label>
-<input type="text">
+<input 
+type="text" 
+name="hsrlPersonnelSignature">
 </div>
 
 <br>
@@ -1057,12 +1533,17 @@ And two from any of the following:
 
 </div>
 
-<button>Submit</button>
+<!-- SUBMIT BUTTON -->
+<div style="text-align:center; margin-top:30px;">
+    <button type="submit" id="submitBtn">Submit Application</button>
+</div>
 
 </form>
 </div>
 
 <script>
+
+/* SECOND APPLICANT TOGGLE */
 const toggle = document.getElementById("toggle");
 
 const secondSections = [
@@ -1076,11 +1557,77 @@ const secondSections = [
 ];
 
 toggle.addEventListener("change", () => {
+
     secondSections.forEach(id => {
-        document.getElementById(id).classList.toggle("hidden");
+
+        const element = document.getElementById(id);
+
+        if(toggle.checked){
+            element.classList.remove("hidden");
+        } else {
+            element.classList.add("hidden");
+        }
+
     });
+
 });
+
+
+/* GOOGLE SHEET SUBMIT */
+const form = document.getElementById("applicationForm");
+
+const submitBtn = document.getElementById("submitBtn");
+
+/* YOUR GOOGLE APPS SCRIPT URL */
+const scriptURL = "https://script.google.com/macros/s/AKfycbzaEUZDS0F8P0PjQvfbZ7PIVr8O3LfZHmOkkTVQIV9u9awdybYEiXItpPEt_hF1jkYQ/exec";
+
+
+form.addEventListener("submit", async (e) => {
+
+    e.preventDefault();
+
+    submitBtn.disabled = true;
+    submitBtn.innerText = "Submitting...";
+
+    const formData = new FormData(form);
+
+    try {
+
+        const response = await fetch(scriptURL, {
+            method: "POST",
+            body: formData
+        });
+
+        const result = await response.text();
+
+        alert("Application submitted successfully!");
+
+        form.reset();
+
+        /* HIDE SECOND APPLICANT AGAIN */
+        secondSections.forEach(id => {
+            document.getElementById(id).classList.add("hidden");
+        });
+
+        toggle.checked = false;
+
+    } catch (error) {
+
+        console.error(error);
+
+        alert("Error submitting form!");
+
+    } finally {
+
+        submitBtn.disabled = false;
+        submitBtn.innerText = "Submit Application";
+
+    }
+
+});
+
 </script>
 
 </body>
 </html>
+
