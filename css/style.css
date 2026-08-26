@@ -1408,4 +1408,16 @@ img {
     }
 }
 
+.location-item-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 5px;
+}
+
+.list-brand-logo {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
 
