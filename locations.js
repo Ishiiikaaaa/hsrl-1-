@@ -15,12 +15,19 @@ const filterCheckboxes = document.querySelectorAll('.filter-checkbox input');
 // - `lat` and `lng` are required for the map. You can get these from Google Maps.
 // - `services` must match the 'value' of the checkboxes in locations.html
 // ========================================================================
+const brandIconMap = {
+    "BP": "images/bp-logo.png",
+    "ESSO": "images/esso-logo.png",
+    "Shell": "images/shell-logo.png"
+};
+
 const locationsData = [
     {
         name: "Anson Service Station",
         address: "Brockhurst Road,Gosport, Hampshire, PO12 3AZ",
         lat: 50.8075,
         lng: -1.1499,
+        brand: "BP",
         services: ["Air", "Jet Wash", "Coffee", "Rollover"]
     },
     {
@@ -28,6 +35,7 @@ const locationsData = [
         address: "529 Rayleith Road, Essex, SS9 5HJ",
         lat: 51.76590,
         lng: 0.66736,
+        brand: "BP",
         services: ["Rollover", "Air",	"Car Wash",	"Jet Wash",	"Vaccum", "Coffee"]
     },
     {
@@ -35,6 +43,7 @@ const locationsData = [
         address: "54 Botley Road, North Baddesley, Hampshire, SO52 9DU",
         lat: 50.97793,
         lng: -1.43735,
+        brand: "BP",
         services: ["Air", "Car Wash", "Vaccum", "Rollover"]
     },
     {
@@ -42,6 +51,7 @@ const locationsData = [
         address: "London Road, Swanley, BR8 7HA",
         lat: 51.3971,
         lng: 0.1732,
+        brand: "BP",
         services: ["Air"]
     },
     {
@@ -49,6 +59,7 @@ const locationsData = [
         address: "Great North Road (A1), Stotfold, Hitchin, SG5 4BL",
         lat: 52.016,
         lng: -0.222,
+        brand: "BP",
         services: ["Air", "Coffee", "Rollover", "Subway", "Toilets"]
     },
     {
@@ -56,6 +67,7 @@ const locationsData = [
         address: "Vineyard Road, Abingdon, OX14 3PB",
         lat: 51.670,
         lng: -1.278,
+        brand: "BP",
         services: ["Air", "Coffee", "Rollover"]
     },
     {
@@ -63,6 +75,7 @@ const locationsData = [
         address: "Wexham Road, Slough, Berkshire, SL2 5QY",
         lat: 51.536,
         lng: -0.602,
+        brand: "BP",
         services: ["Air", "Car Wash", "Vaccum", "Coffee", "Rollover"]
     },
     {
@@ -70,6 +83,7 @@ const locationsData = [
         address: "51 Pedmore Road, Stourbridge, West Midlands, DY9 8DG",
         lat: 52.453,
         lng: -2.100,
+        brand: "BP",
         services: ["Air", "Jet Wash", "Vaccum", "Coffee", "Rollover", "Fireaway Pizza", "Toilets", "Stoneway Pizza", "Lauderette"]
     },
     {
@@ -77,6 +91,7 @@ const locationsData = [
         address: "Huntingdon Road, Girton, Cambridgeshire, CB3 0LQ",
         lat: 52.235,
         lng: 0.088,
+        brand: "BP",
         services: ["Air", "Car Wash", "Vaccum", "Coffee", "Rollover", "Toilets"]
     },
     {
@@ -84,6 +99,7 @@ const locationsData = [
         address: "Patcham By-Pass, Brighton, East Sussex, BN1 8YB",
         lat: 50.871,
         lng: -0.137,
+        brand: "ESSO",
         services: ["Air", "Jet Wash", "Vaccum", "Coffee", "Rollover", "Toilets"]
     },
     {
@@ -91,6 +107,7 @@ const locationsData = [
         address: "Abbey Road, London, NW10 7TS",
         lat: 51.532,
         lng: -0.267,
+        brand: "ESSO",
         services: ["Air", "Jet Wash", "Vaccum", "Coffee", "Rollover", "Toilets"]
     },
     {
@@ -98,6 +115,7 @@ const locationsData = [
         address: "100 Old West Road, Gravesend Kent, DA11 0LR",
         lat: 51.455,
         lng: 0.359,
+        brand: "ESSO",
         services: ["Air", "Jet Wash", "Coffee", "Rollover", "Fireaway Pizza", "Toilets", "Stoneway Pizza"]
     },
     {
@@ -105,6 +123,7 @@ const locationsData = [
         address: "40 – 42 Woodside Road, Amersham, Buckinghamshire, HP6 6AJ",
         lat: 51.670,
         lng: -0.608,
+        brand: "Shell",
         services: ["Air", "Coffee", "Rollover", "Toilets"]
     },
     {
@@ -112,6 +131,7 @@ const locationsData = [
         address: "295 Bexley Road, Erith, Kent, DA8 3EX",
         lat: 51.472,
         lng: 0.170,
+        brand: "BP",
         services: ["Air", "Car Wash", "Vaccum", "Coffee", "Amazon Locker", "Rollover", "Subway", "Toilets"]
     }
 
@@ -209,9 +229,16 @@ const serviceIconsHTML = `
     </div>
 `;
 
+const brandLogoSrc = brandIconMap[location.brand] || '';
+        const brandLogoHTML = brandLogoSrc
+            ? `<img src="${brandLogoSrc}" alt="${location.brand}" class="list-brand-logo">`
+            : '';
 
         listItem.innerHTML = `
-            <h5>${location.name}</h5>
+            <div class="location-item-header">
+                ${brandLogoHTML}
+                <h5>${location.name}</h5>
+            </div>
             <p>${location.address}</p>
             ${serviceIconsHTML}
             <a href="https://www.google.com/maps/dir/?api=1&destination=${location.lat},${location.lng}" target="_blank">Get Directions <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
@@ -243,10 +270,18 @@ function renderMapMarkers(locations) {
     markers = [];
 
     locations.forEach(location => {
+        const iconUrl = brandIconMap[location.brand];
+
+    
         const marker = new google.maps.Marker({
             position: { lat: location.lat, lng: location.lng },
             map: map,
             title: location.name,
+            icon: iconUrl ? {
+                url: iconUrl,
+                scaledSize: new google.maps.Size(40, 40), // logo size on the map
+                anchor: new google.maps.Point(20, 20)  
+            } : undefined
         });
 
         // Store the content for the info window directly on the marker object
