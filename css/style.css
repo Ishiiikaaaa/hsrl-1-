@@ -2143,3 +2143,225 @@ about-intro p {
         font-size: 1.4rem;
     }
 }
+
+
+
+
+
+/* ==========================================
+   HIGHWAY STOPS RETAIL LTD
+   PREMIUM NAVY BLUE THEME
+========================================== */
+
+/* MAIN COLOUR VARIABLES */
+:root {
+    --primary-color: #0A1F44;
+    --secondary-color: #EAF0F8;
+    --text-color: #333333;
+    --heading-color: #0A1F44;
+    --white-color: #ffffff;
+    --shadow: 0 4px 15px rgba(10, 31, 68, 0.10);
+}
+
+/* GENERAL HEADINGS */
+h1, h2, h3 {
+    color: var(--heading-color);
+}
+
+/* NAVIGATION */
+.main-nav a:hover,
+.main-nav a.active {
+    color: #0A1F44;
+}
+
+.main-nav a::after {
+    background-color: #0A1F44;
+}
+
+/* BUTTONS */
+.btn-submit {
+    background-color: #0A1F44;
+    box-shadow: 0 8px 20px rgba(10, 31, 68, 0.25);
+}
+
+.btn-submit:hover {
+    background-color: #071530;
+    box-shadow: 0 12px 25px rgba(10, 31, 68, 0.35);
+}
+
+/* SLIDER NAVIGATION */
+.slider-dot:hover,
+.slider-dot.active {
+    background: #0A1F44;
+    border-color: #0A1F44;
+}
+
+/* HOME PAGE FEATURE BOXES */
+.feature-box h3 {
+    color: #0A1F44;
+}
+
+/* ABOUT PAGE */
+.about-intro h2,
+.about-card-content h3,
+.about-leadership h2,
+.leadership-section > h2,
+.leader-content h3,
+.stat-box h3 {
+    color: #0A1F44;
+}
+
+/* ABOUT PAGE CARDS */
+.about-info-card,
+.about-card-content {
+    background-color: #ffffff;
+}
+
+/* WHAT WE OFFER */
+.what-we-offer {
+    background: #F0F4FA;
+}
+
+.what-we-offer h2,
+.offer-card h3 {
+    color: #0A1F44;
+}
+
+.offer-card {
+    border-left-color: #0A1F44;
+}
+
+/* CONTRACT PAGE */
+.contract-modern {
+    background: #F4F6FA;
+}
+
+.contract-intro {
+    background: #EAF0F8;
+    border-left-color: #0A1F44;
+}
+
+.contract-intro h2,
+.contract-info-section h2,
+.contract-text h2,
+.contract-info-section h2::after {
+    color: #0A1F44;
+}
+
+.contract-info-section h2::after {
+    background: #0A1F44;
+}
+
+.contract-list li {
+    background: #F3F6FB;
+    border-left-color: #0A1F44;
+}
+
+.contract-steps li {
+    background: #EDF2F9;
+}
+
+.contract-steps li::before {
+    background: #0A1F44;
+}
+
+/* CONTRACT FEATURE CARDS */
+.feature-card {
+    border-top-color: #0A1F44;
+}
+
+.feature-card h3 {
+    color: #0A1F44;
+}
+
+/* CONTRACT HIGHLIGHT BOX */
+.contract-highlight {
+    background: linear-gradient(135deg, #0A1F44, #071530);
+}
+
+/* CONTRACT FINAL CTA */
+.contract-final-cta {
+    background: linear-gradient(135deg, #0A1F44, #173B70);
+}
+
+.contract-final-cta a {
+    color: #0A1F44;
+}
+
+/* CONTRACT INVESTMENT BOX */
+.contract-box {
+    background: linear-gradient(135deg, #0A1F44, #071530);
+}
+
+/* SERVICES PAGE */
+.services-main-heading,
+.service-card h5 {
+    color: #0A1F44;
+}
+
+/* CONTACT PAGE */
+.contact-info h3,
+.contact-form h3 {
+    color: #0A1F44;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #0A1F44;
+}
+
+/* SEARCH AND FILTERS */
+.top-filter-bar .search-box input:focus {
+    border-color: #0A1F44;
+    box-shadow: 0 0 0 3px rgba(10, 31, 68, 0.15);
+}
+
+/* LOCATIONS PAGE */
+.locations-header {
+    background-color: #EAF0F8;
+}
+
+/* FOOTER */
+.main-footer {
+    background: linear-gradient(135deg, #0A1F44, #071530);
+}
+
+.footer-section h4 {
+    border-bottom-color: #56749F;
+}
+
+/* MOBILE NAVIGATION */
+@media (max-width: 768px) {
+    .main-nav {
+        background: #ffffff;
+    }
+}
+
+/* REMOVE REMAINING GREEN ACCENTS */
+.location-item-services i[title="Subway"],
+.location-item-services i[title="ATM"],
+.filter-checkbox input[value="Subway"] + i,
+.filter-checkbox input[value="ATM"] + i {
+    color: #0A1F44;
+}
+
+.location-item-services i:hover {
+    background: #EAF0F8;
+}
+
+/* PREMIUM NAVY SHADOWS */
+.about-info-card:hover,
+.leader-card:hover,
+.feature-card:hover,
+.service-card:hover {
+    box-shadow: 0 12px 30px rgba(10, 31, 68, 0.12);
+}
+
+/* CONSISTENT PAGE BACKGROUNDS */
+.contract-modern,
+.about-modern {
+    background: linear-gradient(to bottom, #ffffff, #F0F4FA);
+}
+
+/* END OF NAVY BLUE THEME */
+
