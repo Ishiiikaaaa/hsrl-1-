@@ -1806,8 +1806,8 @@ about-intro p {
 .leader-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
-    background: #ffffff ;
-} 
+    background: #ffffff;
+}
 
 /* Leader Photo */
 
