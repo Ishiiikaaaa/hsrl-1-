@@ -2364,5 +2364,32 @@ h1, h2, h3 {
     background: linear-gradient(to bottom, #ffffff, #F0F4FA);
 }
 
+
+/* ===== BRIGHTER IMAGES ===== */
+
+/* Home slider overlay: lighter */
+.hero-slider::after {
+    background: rgba(0, 0, 0, 0.12);
+}
+
+/* Page banner overlay: lighter */
+.page-banner::after {
+    background: linear-gradient(to right, rgba(0,0,0,0.25), rgba(0,0,0,0.05));
+}
+
+/* Make images vivid */
+.hero-slider .slide img,
+.page-banner img,
+.about-card-image img,
+.leader-image img,
+.offer-item img {
+    filter: brightness(1.1) saturate(1.15) contrast(1.05);
+}
+
+/* Partner logos clearer */
+.logo-section .partner-slide img {
+    opacity: 1;
+    filter: none;
+}
 /* END OF NAVY BLUE THEME */
 
