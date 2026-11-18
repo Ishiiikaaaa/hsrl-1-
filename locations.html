@@ -1,171 +1,333 @@
-<!-- FILE: locations.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site Locations - Highway Stops Retail</title>
-    <link rel="stylesheet" href="css/style.css">
-    <!-- Font Awesome for icons (like on the Rontec site) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Locations - Highway Stops Retail</title>
 
-    <!-- ADDED: Swiper.js CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+<!-- Your site CSS (check the path) -->
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+<style>
+.loc-page{background:#f4f6f8;color:#222;font-family:Arial,sans-serif}
+.loc-page *{box-sizing:border-box}
+.loc-page .loc-title{background:#0b2a5b;color:#fff;padding:28px 20px;text-align:center}
+.loc-page .loc-title h1{font-size:30px;font-weight:bold;margin-bottom:8px;color:#fff}
+.loc-page .loc-title p{font-size:15px;opacity:.9}
+.loc-page .filters{display:flex;flex-wrap:wrap;gap:10px;padding:12px 20px;background:#fff;border-bottom:1px solid #ddd}
+.loc-page .filters input,.loc-page .filters select{padding:10px;border:1px solid #bbb;border-radius:6px;font-size:14px}
+.loc-page .filters input{flex:2;min-width:200px}
+.loc-page .filters select{flex:1;min-width:140px}
+.loc-page .filters button{padding:10px 16px;border:0;border-radius:6px;background:#0b2a5b;color:#fff;cursor:pointer}
+.loc-page .main{display:flex;height:80vh;min-height:500px}
+.loc-page #list{width:35%;overflow-y:auto;background:#fff;border-right:1px solid #ddd}
+.loc-page #map{width:65%}
+.loc-page .card{padding:14px 16px;border-bottom:1px solid #eee;cursor:pointer}
+.loc-page .card:hover,.loc-page .card.active{background:#eaf0fa}
+.loc-page .card h3{font-size:16px;margin-bottom:4px}
+.loc-page .card p{font-size:13px;color:#555;margin:2px 0}
+.loc-page .tag{display:inline-block;background:#e8eef5;border-radius:10px;padding:2px 8px;font-size:11px;margin:4px 3px 0 0}
+.loc-page .tag.brand{background:#0b2a5b;color:#fff}
+.loc-page .btn{display:inline-block;margin-top:8px;padding:7px 12px;background:#0b2a5b;color:#fff;border:0;border-radius:5px;cursor:pointer;font-size:13px;text-decoration:none}
+.loc-page .popup-title{font-weight:bold;font-size:15px}
+.loc-page .empty{padding:20px;text-align:center;color:#777}
+.loc-page #modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:3000}
+.loc-page #modal .box{position:absolute;inset:3% 4%;background:#fff;border-radius:10px;display:flex;overflow:hidden}
+.loc-page #dInfo{width:32%;padding:18px;overflow-y:auto;border-right:1px solid #ddd}
+.loc-page #dMap{width:68%}
+.loc-page #close{position:absolute;top:8px;right:14px;z-index:4000;background:#0b2a5b;color:#fff;border:0;border-radius:50%;width:34px;height:34px;font-size:18px;cursor:pointer}
+.loc-page #dInfo h2{margin-bottom:8px}
+.loc-page #dInfo p{margin:6px 0;font-size:14px}
+.loc-page #route{margin-top:12px;padding:10px;background:#f1f3f5;border-radius:6px;font-size:14px}
+.loc-page .logo-pin{background:none;border:0}
+.loc-page .logo-pin img,.loc-page .logo-pin svg{width:40px;height:40px;filter:drop-shadow(0 2px 3px rgba(0,0,0,.4))}
+@media(max-width:800px){
+ .loc-page .main{flex-direction:column-reverse;height:auto}
+ .loc-page #list{width:100%;height:320px}
+ .loc-page #map{width:100%;height:380px}
+ .loc-page #modal .box{flex-direction:column}
+ .loc-page #dInfo{width:100%;height:40%}
+ .loc-page #dMap{width:100%;height:60%}
+}
+</style>
 </head>
-<body> 
+<body>
 
-    <header class="main-header">
-        <div class="container">
+<!-- ========== HEADER ========== -->
+<header class="main-header">
+  <div class="container">
     <a href="index.html" class="logo">
-        <img src="images/logo.png" alt="Highway Stops Retail Logo">
+      <img src="images/logo.png" alt="Highway Stops Retail Logo">
     </a>
 
     <button class="hamburger" id="hamburger">☰</button>
 
     <nav class="main-nav">
-        <ul id="menu">
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="contract.html">Contract Management</a></li>
-            <li><a href="locations.html">Locations</a></li>
-            <li><a href="offers.html">Offers</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-        </ul>
+      <ul id="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contract.html">Contract Management</a></li>
+        <li><a href="locations.html" class="active">Station Finder</a></li>
+        <li><a href="offers.html">Offers</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
     </nav>
-
-</div>
-
+  </div>
 </header>
 
+<!-- ========== LOCATIONS SECTION ========== -->
+<div class="loc-page">
+  <div class="loc-title">
+    <h1>Station Finder</h1>
+    <p>Find your nearest HSRL station using the search and filter options below.</p>
+  </div>
 
-    <main>
-        <!-- ================== Page Title Hero ================== -->
-        <section class="locations-hero-simple">
-            <div class="container">
-                <h1>Our Network of Service Stations</h1>
-                <p>Find your nearest Highway Stop using the search and filter options below.</p>
-            </div>
-        </section>
+  <div class="filters">
+    <input type="text" id="search" placeholder="Search station name or address...">
+    <select id="fBrand"><option value="">Fuel Brand (All)</option></select>
+    <select id="fService"><option value="">Services (All)</option></select>
+    <select id="fExtra"><option value="">Extras (All)</option></select>
+    <button onclick="resetAll()">Reset</button>
+  </div>
 
-        <!-- ================== Main Content: Search Panel & Map ================== -->
-        
-            <!-- TOP HORIZONTAL BAR -->
-<div class="top-filter-bar">
-                <div class="filter-box">
-                    <h4>Filter by Services</h4>
-                    <div class="filter-options">
-                        <label class="filter-checkbox">
-                           <input type="checkbox" name="service" value="Air"> <i class="fa-solid fa-wind"></i> Air
-                        </label>
-                        <label class="filter-checkbox">
-                            <input type="checkbox" name="service" value="Jet Wash"> <i class="fa-solid fa-spray-can"></i> Jet Wash
-                        </label>
-                        <label class="filter-checkbox">
-                            <input type="checkbox" name="service" value="Vaccum"> <i class="fa-solid fa-broom-ball"></i> Vaccum
-                        </label>
-                         <label class="filter-checkbox">
-                            <input type="checkbox" name="service" value="Car Wash"> <i class="fa-solid fa-car-side"></i> Car Wash
-                        </label>
-                        <label class="filter-checkbox">
-                            <input type="checkbox" name="service" value="Coffee"> <i class="fa-solid fa-mug-hot"></i> Coffee
-                        </label>
-                        <label class="filter-checkbox">
-                            <input type="checkbox" name="service" value="Deliveroo"> <i class="fa-solid fa-biking"></i> Deliveroo
-                        </label>
-                        <label class="filter-checkbox">
-                            <input type="checkbox" name="service" value="Just Eat"> <i class="fa-solid fa-utensils"></i> Just Eat
-                        </label>
-                        <label class="filter-checkbox">
-                            <input type="checkbox" name="service" value="Uber Eat"> <i class="fa-solid fa-motorcycle"></i> Uber Eat
-                        </label>
-                        <label class="filter-checkbox">
-                            <input type="checkbox" name="service" value="Amazon Locker"> <i class="fa-solid fa-box-open"></i> Amazon Locker
-                        </label>
-                        <label class="filter-checkbox">
-                            <input type="checkbox" name="service" value="Lottery"> <i class="fa-solid fa-ticket"></i> Lottery
-                        </label>
-                        <label class="filter-checkbox">
-                            <input type="checkbox" name="service" value="Rollover"> <i class="fa-solid fa-hotdog"></i> Rollover
-                        </label>
-                        <label class="filter-checkbox">
-                            <input type="checkbox" name="service" value="Subway"> <i class="fa-solid fa-utensils"></i> Subway
-                        </label>
-                        <label class="filter-checkbox">
-                            <input type="checkbox" name="service" value="Fireaway Pizza"> <i class="fa-solid fa-pizza-slice"></i> Fireaway Pizza
-                        </label>
-                        <label class="filter-checkbox">
-                            <input type="checkbox" name="service" value="Toilets"> <i class="fa-solid fa-restroom"></i> Toilets
-                        </label>
-                        <label class="filter-checkbox">
-                            <input type="checkbox" name="service" value="ATM"> <i class="fa-solid fa-credit-card"></i> ATM
-                        </label>
-                        <label class="filter-checkbox">
-                            <input type="checkbox" name="service" value="Stoneway Pizza"> <i class="fa-solid fa-pizza-slice"></i> Stoneway Pizza
-                        </label>
-                    </div>
-                </div>
+  <div class="main">
+    <div id="list"></div>
+    <div id="map"></div>
+  </div>
+
+  <div id="modal">
+    <button id="close" onclick="closeModal()">✕</button>
+    <div class="box">
+      <div id="dInfo"></div>
+      <div id="dMap"></div>
+    </div>
+  </div>
 </div>
-              <div class="locations-body">
 
-    <!-- LEFT: STATIONS LIST -->
-    <div class="search-panel">
-        <!-- SEARCH BOX ABOVE LIST -->
-        <div class="search-box">
-            <input type="text" id="locationSearchInput" 
-                   placeholder="Search by city or postcode...">
-        </div>
-        <div class="location-list-container"></div>
-    </div>  
+<!-- ========== FOOTER ========== -->
+<footer class="main-footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>About Us</h4>
+        <p>Highway Stops Retail is a leading independent forecourt operator in the UK, focused on providing premium fuel and a quality retail experience.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="locations.html">Our Locations</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="slavery.html">Slavery Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Contact Info</h4>
+        <ul>
+          <li><p>Unit 4, Metro Trading Centre, Second Way, Wembley, Middlesex, HA9 0YJ</p></li>
+          <li><p>Tel: 020 8900 1009</p></li>
+          <li><p>Email: enquiries@highwaystops.co.uk</p></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2024 Highway Stops Retail Ltd | All Rights Reserved
+    </div>
+  </div>
+</footer>
 
-            <!-- Right Side: Map -->
-            <div class="map-panel">
-                <div id="map"></div>
-            </div>
-            </div>
-    </main>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<!-- Your hamburger menu JS file (check the path) -->
+<script src="js/script.js"></script>
 
-    <!-- ================== Footer (Copied from your code) ================== -->
-    <footer class="main-footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>About Us</h4>
-                    <p>Highway Stops Retail is a leading independent forecourt operator in the UK, focused on providing premium fuel and a quality retail experience.</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="locations.html">Our Locations</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Contact Info</h4>
-                     <ul>
-                        <li><p>Unit 4, Metro Trading Centre, Second Way, Wembley, Middlesex, HA9 0YJ</p></li>
-                        <li><p>Tel: 020 8900 1009</p></li>
-                        <li><p>Email: enquiries@highwaystops.co.uk</p></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                © 2024 Highway Stops Retail Ltd | All Rights Reserved
-            </div>
-        </div>
-    </footer>
+<script>
+// ====== BRAND LOGOS FOR MAP PINS ======
+// To use your real logo files, put the image path here, e.g. BP:"images/bp.png"
+const LOGO_FILES = {BP:"", ESSO:"", Shell:""};
 
-    <!-- Your existing script for mobile menu, etc. -->
-    <script src="js/script.js"></script>
-    
-    <!-- ================== ACTION REQUIRED: Add API Key Below ================== -->
-    <!-- Replace 'YOUR_API_KEY' with your actual Google Maps API key -->
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpU-G71D-UM-eOHWz-FQzyFZHWHGxun9M&callback=initMap"></script>
-    
-    <!-- Script for the location finder logic -->
-    <script src="locations.js"></script>
+const LOGO_SVG = {
+  BP:`<svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="18" fill="#009A44" stroke="#fff" stroke-width="2"/><circle cx="20" cy="20" r="12" fill="#FFE600"/><text x="20" y="25" text-anchor="middle" font-family="Arial" font-weight="bold" font-size="14" fill="#007A33">bp</text></svg>`,
+  ESSO:`<svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><ellipse cx="20" cy="20" rx="19" ry="13" fill="#fff" stroke="#1F4E9E" stroke-width="3"/><text x="20" y="25" text-anchor="middle" font-family="Arial" font-style="italic" font-weight="bold" font-size="13" fill="#E31B23">Esso</text></svg>`,
+  Shell:`<svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M20 3C12 3 6 7 5 13L8 33H32L35 13C34 7 28 3 20 3Z" fill="#FFD500" stroke="#DD1D21" stroke-width="2.5"/><path d="M20 8V32M14 10L13 32M26 10L27 32M9 16L9 30M31 16L31 30" stroke="#DD1D21" stroke-width="1.6" fill="none"/></svg>`
+};
 
+function brandIcon(brand){
+  let html;
+  if(LOGO_FILES[brand]) html=`<img src="${LOGO_FILES[brand]}" alt="${brand}">`;
+  else html=LOGO_SVG[brand]||LOGO_SVG.BP;
+  return L.divIcon({className:'logo-pin',html:html,iconSize:[40,40],iconAnchor:[20,20],popupAnchor:[0,-20]});
+}
+
+// ====== STATION DATA ======
+const raw = [
+ {name:"Anson Service Station",address:"Brockhurst Road, Gosport, Hampshire, PO12 3AZ",brand:"BP",services:["Air","Jet Wash","Coffee","Rollover"]},
+ {name:"Belgrave Service Station",address:"529 Rayleigh Road, Essex, SS9 5HJ",brand:"BP",services:["Rollover","Air","Car Wash","Jet Wash","Vacuum","Coffee"]},
+ {name:"Baddesley Service Station",address:"54 Botley Road, North Baddesley, Hampshire, SO52 9DU",brand:"BP",services:["Air","Car Wash","Vacuum","Rollover"]},
+ {name:"Swanley Service Station",address:"London Road, Swanley, BR8 7HA",brand:"BP",services:["Air"]},
+ {name:"Astwick Service Station",address:"Great North Road (A1), Stotfold, Hitchin, SG5 4BL",brand:"BP",services:["Air","Coffee","Rollover","Subway","Toilets"]},
+ {name:"Vineyard Service Station",address:"Vineyard Road, Abingdon, OX14 3PB",brand:"BP",services:["Air","Coffee","Rollover"]},
+ {name:"Wexham Service Station",address:"Wexham Road, Slough, Berkshire, SL2 5QY",lat:51.536,lng:-0.602,brand:"BP",services:["Air","Car Wash","Vacuum","Coffee","Rollover"]},
+ {name:"Lye Service Station",address:"51 Pedmore Road, Stourbridge, West Midlands, DY9 8DG",brand:"BP",services:["Air","Jet Wash","Vacuum","Coffee","Rollover","Fireaway Pizza","Toilets","Stoneway Pizza","Launderette"]},
+ {name:"Girton Service Station",address:"Huntingdon Road, Girton, Cambridgeshire, CB3 0LQ",brand:"BP",services:["Air","Car Wash","Vacuum","Coffee","Rollover","Toilets"]},
+ {name:"Patcham Service Station",address:"Patcham By-Pass, Brighton, East Sussex, BN1 8YB",brand:"ESSO",services:["Air","Jet Wash","Vacuum","Coffee","Rollover","Toilets"]},
+ {name:"ESSO Park Royal Service Station",address:"Abbey Road, London, NW10 7TS",brand:"ESSO",services:["Air","Jet Wash","Vacuum","Coffee","Rollover","Toilets"]},
+ {name:"Gravesend Service Station",address:"100 Old West Road, Gravesend, Kent, DA11 0LR",brand:"ESSO",services:["Air","Jet Wash","Coffee","Rollover","Fireaway Pizza","Toilets","Stoneway Pizza"]},
+ {name:"Amersham Service Station",address:"40 - 42 Woodside Road, Amersham, Buckinghamshire, HP6 6AJ",brand:"Shell",services:["Air","Coffee","Rollover","Toilets"]},
+ {name:"Erith Service Station",address:"295 Bexley Road, Erith, Kent, DA8 3EX",brand:"BP",services:["Air","Car Wash","Vacuum","Coffee","Amazon Locker","Rollover","Subway","Toilets"]}
+];
+
+const EXTRA_ITEMS=["Coffee","Subway","Toilets","Fireaway Pizza","Stoneway Pizza","Launderette","Amazon Locker"];
+const stations = raw.map((s,i)=>({
+  id:i+1,name:s.name,brand:s.brand,address:s.address,
+  phone:"Not available",hours:"Not available",
+  lat:s.lat,lng:s.lng,
+  services:s.services.filter(x=>!EXTRA_ITEMS.includes(x)),
+  extras:s.services.filter(x=>EXTRA_ITEMS.includes(x))
+}));
+
+// ====== MAIN MAP ======
+const map = L.map('map').setView([51.5,-0.12],7);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'© OpenStreetMap'}).addTo(map);
+let markers = {};
+
+// ====== DROPDOWNS ======
+function fillSelect(id,values){
+  const s=document.getElementById(id);
+  [...new Set(values)].sort().forEach(v=>{const o=document.createElement('option');o.value=v;o.textContent=v;s.appendChild(o)});
+}
+fillSelect('fBrand',stations.map(s=>s.brand));
+fillSelect('fService',stations.flatMap(s=>s.services));
+fillSelect('fExtra',stations.flatMap(s=>s.extras));
+
+// ====== RENDER ======
+function render(){
+  const q=document.getElementById('search').value.toLowerCase().trim();
+  const b=document.getElementById('fBrand').value;
+  const sv=document.getElementById('fService').value;
+  const ex=document.getElementById('fExtra').value;
+
+  const res=stations.filter(s=>
+    (!q||s.name.toLowerCase().includes(q)||s.address.toLowerCase().includes(q)) &&
+    (!b||s.brand===b)&&(!sv||s.services.includes(sv))&&(!ex||s.extras.includes(ex))
+  );
+
+  Object.values(markers).forEach(m=>map.removeLayer(m));
+  markers={};
+  const list=document.getElementById('list');
+  list.innerHTML='';
+  if(!res.length){list.innerHTML='<div class="empty">No station found</div>';return}
+
+  res.forEach(s=>{
+    const m=L.marker([s.lat,s.lng],{icon:brandIcon(s.brand)}).addTo(map);
+    m.bindPopup(popupHTML(s));
+    m.on('mouseover',function(){this.openPopup()});
+    m.on('click',()=>highlight(s.id));
+    markers[s.id]=m;
+
+    const c=document.createElement('div');
+    c.className='card';c.id='card'+s.id;
+    c.innerHTML=`<h3>${s.name}</h3>
+      <p>📍 ${s.address}</p><p>📞 ${s.phone}</p><p>🕒 ${s.hours}</p>
+      <span class="tag brand">${s.brand}</span>
+      ${s.services.map(x=>`<span class="tag">${x}</span>`).join('')}
+      ${s.extras.map(x=>`<span class="tag">${x}</span>`).join('')}<br>
+      <button class="btn" onclick="event.stopPropagation();openDirections(${s.id})">Get Directions</button>`;
+    c.onclick=()=>{map.setView([s.lat,s.lng],15);markers[s.id].openPopup();highlight(s.id)};
+    list.appendChild(c);
+  });
+  const g=L.featureGroup(Object.values(markers));
+  map.fitBounds(g.getBounds().pad(0.3),{maxZoom:15});
+}
+
+function popupHTML(s){
+  return `<div class="popup-title">${s.name}</div>
+    <div>${s.brand}</div><div>📍 ${s.address}</div><div>🕒 ${s.hours}</div>
+    <button class="btn" onclick="openDirections(${s.id})">Get Directions</button>`;
+}
+function highlight(id){
+  document.querySelectorAll('.card').forEach(c=>c.classList.remove('active'));
+  const c=document.getElementById('card'+id);
+  if(c){c.classList.add('active');c.scrollIntoView({behavior:'smooth',block:'nearest'})}
+}
+function resetAll(){
+  ['search','fBrand','fService','fExtra'].forEach(i=>document.getElementById(i).value='');
+  render();
+}
+['search','fBrand','fService','fExtra'].forEach(i=>{
+  document.getElementById(i).addEventListener('input',render);
+  document.getElementById(i).addEventListener('change',render);
+});
+
+// ====== AUTO LOCATION FROM POSTCODE ======
+async function geocodeAll(){
+  const need=stations.filter(s=>s.lat==null);
+  const pcs=need.map(s=>{
+    const m=s.address.match(/([A-Z]{1,2}\d[A-Z\d]?)\s*(\d[A-Z]{2})\s*$/i);
+    return m?(m[1]+' '+m[2]).toUpperCase():null;
+  });
+  try{
+    const r=await fetch('https://api.postcodes.io/postcodes',{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({postcodes:pcs.filter(Boolean)})
+    });
+    const d=await r.json();
+    const lookup={};
+    d.result.forEach(x=>{if(x.result)lookup[x.query.toUpperCase()]=x.result});
+    need.forEach((s,i)=>{
+      const p=lookup[pcs[i]];
+      if(p){s.lat=p.latitude;s.lng=p.longitude}
+    });
+  }catch(e){console.error('Geocode failed',e)}
+  for(let i=stations.length-1;i>=0;i--){if(stations[i].lat==null)stations.splice(i,1)}
+  render();
+}
+geocodeAll();
+
+// ====== DIRECTIONS MODAL ======
+let dMap=null;
+function openDirections(id){
+  const s=stations.find(x=>x.id===id);
+  document.getElementById('modal').style.display='block';
+  document.getElementById('dInfo').innerHTML=`
+    <h2>${s.name}</h2>
+    <p><b>Brand:</b> ${s.brand}</p>
+    <p><b>Address:</b> ${s.address}</p>
+    <p><b>Phone:</b> ${s.phone}</p>
+    <p><b>Timing:</b> ${s.hours}</p>
+    <p><b>Services:</b> ${s.services.join(', ')||'-'}</p>
+    <p><b>Extras:</b> ${s.extras.join(', ')||'-'}</p>
+    <div id="route">Finding your location...</div>
+    <a class="btn" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=${s.lat},${s.lng}">Open in Google Maps</a>`;
+
+  if(!dMap){
+    dMap=L.map('dMap');
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'© OpenStreetMap'}).addTo(dMap);
+  }
+  setTimeout(()=>{
+    dMap.invalidateSize();
+    dMap.eachLayer(l=>{if(l instanceof L.Marker||l instanceof L.Polyline)dMap.removeLayer(l)});
+    dMap.setView([s.lat,s.lng],14);
+    L.marker([s.lat,s.lng],{icon:brandIcon(s.brand)}).addTo(dMap).bindPopup(s.name).openPopup();
+
+    if(!navigator.geolocation){document.getElementById('route').textContent='Location is not supported.';return}
+    navigator.geolocation.getCurrentPosition(pos=>{
+      const u=[pos.coords.latitude,pos.coords.longitude];
+      L.marker(u).addTo(dMap).bindPopup('You are here');
+      fetch(`https://router.project-osrm.org/route/v1/driving/${u[1]},${u[0]};${s.lng},${s.lat}?overview=full&geometries=geojson`)
+        .then(r=>r.json()).then(d=>{
+          const r=d.routes[0];
+          const line=L.geoJSON(r.geometry,{style:{color:'#0b2a5b',weight:5}}).addTo(dMap);
+          dMap.fitBounds(line.getBounds().pad(0.2));
+          document.getElementById('route').innerHTML=
+            `🚗 Distance: <b>${(r.distance/1000).toFixed(1)} km</b><br>⏱ Time: <b>${Math.round(r.duration/60)} min</b>`;
+        }).catch(()=>document.getElementById('route').textContent='Route not found.');
+    },()=>{document.getElementById('route').textContent='Please allow location permission to get directions.'});
+  },200);
+}
+function closeModal(){document.getElementById('modal').style.display='none'}
+</script>
 </body>
 </html>
